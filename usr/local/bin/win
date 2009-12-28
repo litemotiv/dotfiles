@@ -1,0 +1,2 @@
+#!/bin/sh
+VBoxSDL -evdevkeymap -vm "Windows XP Pro"
