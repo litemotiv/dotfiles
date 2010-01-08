@@ -93,7 +93,7 @@ bind Mod1+54 kill
 
 # Mod1+p starts dmenu and launches the selected application
 # for now, we don’t have an own launcher
-bind Mod1+33 exec /usr/local/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'
+bind Mod1+33 exec /usr/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'
 
 # MPD
 bind 122 exec mpc volume -2 > /dev/null 2>&1
