@@ -1,0 +1,2 @@
+capstone -fstype=curl,rw,nodev,nonempty,noatime :ftp\://capstone\:medohenu!\@ftp.capstone.nl
+#swordsman -fstype=curl,rw,nodev,nonempty,noatime :ftp\://lh1593801\:spavekura\@sleepychicken.com
