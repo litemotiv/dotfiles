@@ -5,6 +5,7 @@ LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
 alias ls='ls --color=auto -h'
 alias grep='grep -n --color=auto'
+alias bb='sudo bauerbill'
 
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY

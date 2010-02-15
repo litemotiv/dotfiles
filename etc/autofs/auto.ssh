@@ -1,2 +1,3 @@
-msi			-fstype=fuse,uid=100,gid=100,rw,nodev,nonempty,noatime,allow_other,max_read=65536 :sshfs\#ollie@msi\:/
-capstone01	-fstype=fuse,uid=1000,gid=100,rw,nodev,nonempty,noatime,allow_other,max_read=65536 :sshfs\#ollie@capstone01\:/
+msi			-fstype=fuse,uid=100,gid=100,rw,nonempty,reconnect,allow_other,max_read=65536 :sshfs\#ollie@msi\:/
+capstone01	-fstype=fuse,uid=1000,gid=100,rw,nonempty,reconnect,allow_other,max_read=65536 :sshfs\#ollie@capstone01\:/
+#knsb		-fstype=fuse,uid=1000,gid=100,rw,nonempty,allow_other,max_read=65536 :sshfs\#ollie@capstone01\:/
