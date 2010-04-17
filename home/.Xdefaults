@@ -1,5 +1,10 @@
 Xcursor.theme:whiteglass
 
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hinstyle:   hintslight
+
 URxvt.buffered: true
 URxvt.transparent: true
 urxvt*shading:8 
@@ -7,6 +12,8 @@ URxvt.background: black
 URxvt.foreground: #90D918
 URxvt.scrollBar: false
 URxvt.internalBorder: 0
+
+!URxvt.font:xft:envy code r:medium:pixelsize=12
 
 URxvt.font: xft:Monospace:pixelsize=12:antialias=false
 !URxvt.boldFont: xft:Monospace:pixelsize=12:antialias=false
