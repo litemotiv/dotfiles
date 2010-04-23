@@ -8,8 +8,6 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 urxvtd -q -o -f
 
-sh /home/ollie/.fehbg &
-(sleep 3; /usr/local/bin/stats.sh) &
 exec /usr/bin/i3 --force-xinerama
-exec /usr/bin/i3 >/home/ollie/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
+#exec /usr/bin/i3 >/home/ollie/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
 

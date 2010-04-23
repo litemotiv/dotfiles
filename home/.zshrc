@@ -39,3 +39,7 @@ if [[ ${TERM} != "linux" ]] then
 	preexec () { print -Pn "\e]0;[%m] $1\a" }
 fi
 
+# if we're not inside tmux, attach or start new session
+if [[ -z "$TMUX" ]]; then
+	tmux att 
+fi

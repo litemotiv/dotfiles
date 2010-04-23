@@ -1,7 +1,7 @@
 # This configuration uses Mod1 and Mod3. Make sure they are mapped properly using xev(1)
 # and xmodmap(1). Usually, Mod1 is Alt (Alt_L) and Mod3 is Windows (Super_L)
 
-ipc-socket ~/.i3/ipc.sock
+ipc-socket ~/.config/i3/ipc.sock
 new_window bb
 workspace_bar yes
 
@@ -110,3 +110,12 @@ bind Mod1+Shift+26 exit
 
 # Mod1+Shift+r restarts i3 inplace
 bind Mod1+Shift+27 restart
+
+# assign clients to workspaces
+assign urxvt 2
+
+# start applications
+#exec sh /home/ollie/.fehbg
+exec feh --bg-scale '/home/ollie/Pictures/edwardhoppernighthawks.jpg'
+exec /usr/local/bin/stats.sh
+exec urxvtc
