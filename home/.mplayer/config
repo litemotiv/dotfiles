@@ -1,0 +1,8 @@
+vo=vdpau
+vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau
+ao=alsa
+stop-xscreensaver=1
+font="DejaVu Sans"
+subfont-text-scale=3
+subfont-osd-scale=3
+fs=1

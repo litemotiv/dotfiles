@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export MPD_HOST=synology
+export MPD_HOST=yuki
 /usr/bin/xrdb -merge ~/.Xresources &
 syndaemon -i 1 &
 xset r rate 200 30

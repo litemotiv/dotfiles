@@ -1,3 +1,4 @@
-msi			-fstype=fuse,uid=100,gid=100,rw,nonempty,reconnect,allow_other,max_read=65536 :sshfs\#ollie@msi\:/
-capstone01	-fstype=fuse,uid=1000,gid=100,rw,nonempty,reconnect,allow_other,max_read=65536 :sshfs\#ollie@capstone01\:/
+msi			-fstype=fuse,uid=100,gid=100,rw,nonempty,reconnect,allow_other,IdentityFile=/home/ollie/.ssh/id_dsa :sshfs\#ollie@msi\:/
+capstone01	-fstype=fuse,uid=1000,gid=100,rw,nonempty,reconnect,allow_other,IdentityFile=/home/ollie/.ssh/id_dsa :sshfs\#ollie@capstone01\:/
+yuki		-fstype=fuse,uid=1000,gid=100,rw,nonempty,reconnect,allow_other,IdentityFile=/home/ollie/.ssh/id_dsa :sshfs\#ollie@yuki\:/home/ollie/
 #knsb		-fstype=fuse,uid=1000,gid=100,rw,nonempty,allow_other,max_read=65536 :sshfs\#ollie@capstone01\:/

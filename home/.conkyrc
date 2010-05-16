@@ -8,7 +8,7 @@ out_to_x no
 update_interval 5.0
 uppercase no
 use_spacer none
-mpd_host synology
+mpd_host yuki
 mpd_port 6600
 
 TEXT
