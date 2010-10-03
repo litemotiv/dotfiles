@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export MPD_HOST=yuki
 /usr/bin/xrdb -merge ~/.Xresources &
@@ -8,6 +8,6 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 urxvtd -q -o -f
 
-exec /usr/bin/i3 --force-xinerama
+exec dbus-launch ck-launch-session /usr/bin/i3 --force-xinerama
 #exec /usr/bin/i3 >/home/ollie/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
 

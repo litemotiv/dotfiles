@@ -3,7 +3,7 @@
 
 ipc-socket ~/.config/i3/ipc.sock
 new_window bb
-workspace_bar yes
+workspace_bar no
 
 # ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -115,7 +115,8 @@ bind Mod1+Shift+27 restart
 assign urxvt 2
 
 # start applications
-#exec sh /home/ollie/.fehbg
-exec feh --bg-scale '/home/ollie/Pictures/edwardhoppernighthawks.jpg'
-exec /usr/local/bin/stats.sh
+exec sh /home/ollie/.fehbg
+#exec conky | dzen2 -w 1000 -x 280 -y 1400 -h 15 -ta r > /dev/null 2>&1
+exec i3bar -c conky -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1 
 exec urxvtc
+exec xcompmgr -f -D 5

@@ -27,7 +27,7 @@
 $MAINDIR=~/Downloads
 
 # Destination-directory to store the downloaded files.
-DestDir=${MAINDIR}/dst
+DestDir=${MAINDIR}/done
 
 # Directory to monitor for incoming nzb-jobs.
 #
@@ -86,7 +86,7 @@ Server1.Username=marko.jansen@ziggo.nl
 Server1.Password=welkom.123
 
 # Server requires "Join Group"-command (yes, no).
-Server1.JoinGroup=no
+Server1.JoinGroup=yes
 
 # Encrypted server connection (TLS/SSL) (yes, no).
 Server1.Encryption=no
@@ -172,7 +172,7 @@ NzbDirFileAge=60
 # file to be merged with the first for parchecking to work properly. With 
 # option "MergeNzb" nzbget can merge files automatically. You only need to 
 # save the second file under the same filename as the first one.
-MergeNzb=no
+MergeNzb=yes
 
 # Set path to program, that must be executed before any file in incoming 
 # directory (option <NzbDir>) is processed.
@@ -207,7 +207,7 @@ MergeNzb=no
 #
 # NOTE: Files with extension ".nzb_processed" are not passed to 
 # NzbProcess-script before adding to queue. This feature allows 
-# NzbProcess-script to perevnt the scanning of nzb-files extracted from 
+# NzbProcess-script to prevent the scanning of nzb-files extracted from 
 # archives, if they were already processed by the script.
 NzbProcess=
 
@@ -270,8 +270,8 @@ Decode=yes
 # destination file with required size (total size of all articles), 
 # then writes on the fly decoded articles directly to the file 
 # without creating of any temporary files, even for decoded articles.
-# This may results in major performance improvement, but this higly 
-# depends on OS and filesystem used.
+# This may results in major performance improvement, but this highly 
+# depends on OS and file system.
 #
 # Can improve performance on a very fast internet connections, 
 # but you need to test if it works in your case.
@@ -282,19 +282,19 @@ Decode=yes
 # The possible reason is that on EXT3-partition Linux can create large files
 # very fast (if the content of file does not need to be initialized), 
 # but Windows on NTFS-partition and also Linux on FAT32-partition need to
-# initialize created large file with nulls, resulting in a big performace 
+# initialize created large file with nulls, resulting in a big performance 
 # degradation.
 #
 # NOTE: for testing try to download few big files (with total size 500-1000MB)
 # and measure required time. Do not rely on the program's speed indicator.
 #
 # NOTE: if both options <DirectWrite> and <ContinuePartial> are enabled,
-# the program will create empty articles-files in temp-directrory. They
+# the program will still create empty articles-files in temp-directory. They
 # are used to continue download of file on a next program start. To minimize
 # disk-io it is recommended to disable option <ContinuePartial>, if 
 # <DirectWrite> is enabled. Especially on a fast connections (where you
 # would want to activate <DirectWrite>) it should not be a problem to 
-# redownload the interrupted file.
+# redownload an interrupted file.
 DirectWrite=no
 
 # Check CRC of downloaded and decoded articles (yes, no).
@@ -362,7 +362,7 @@ DownloadRate=0
 # Set the size of memory buffer used by writing the articles (bytes).
 #
 # Bigger values decrease disk-io, but increase memory usage.
-# Value "0" causes the OS-dependend default value to be used.
+# Value "0" causes an OS-dependent default value to be used.
 # With value "-1" (which means "max/auto") the program sets the size of 
 # buffer according to the size of current article (typically less than 500K).
 #
@@ -376,10 +376,10 @@ DownloadRate=0
 #
 # NOTE: for desktop computers with large amount of memory value "-1" (max/auto)
 # is recommended, but for computers with very low memory (routers, NAS)
-# value "0" (default OS-dependend size) could be better alternative.
+# value "0" (default OS-dependent size) could be better alternative.
 #
 # NOTE: write-buffer is managed by OS (system libraries) and therefore 
-# the effect of the option is highly OS-dependend.
+# the effect of the option is highly OS-dependent.
 WriteBufferSize=0
 
 # Pause if disk space gets below this value (megabytes).
@@ -393,11 +393,25 @@ DiskSpace=250
 # cancelled (nzb-file was deleted from queue) (yes, no).
 #
 # NOTE: nzbget does not delete files in a case if all remaining files in 
-# queue are par-files. That prevents the accidential deletetion if the option
+# queue are par-files. That prevents the accidental deletion if the option
 # <ParCleanupQueue> is disabled or if the program was interrupted during 
 # parcheck and later restarted without reloading of post queue (option 
 # <ReloadPostQueue> disabled).
 DeleteCleanupDisk=no
+
+# Keep the history of downloaded nzb-files (days).
+#
+# Value "0" disables the history.
+#
+# NOTE: when a collection having paused files is added to history all remaining
+# files are moved from download queue to a list of parked files. It holds files
+# which could be required later if the collection will be moved back to
+# download queue for downloading of remaining files. The parked files still
+# consume some amount of memory and disk space. If the collection was downloaded
+# and successfully par-checked or postprocessed it is recommended to discard the
+# unneeded parked files before adding the collection to history. For par2-files
+# that can be achieved with the option <ParCleanupQueue>.
+KeepHistory=1
 
 ##############################################################################
 ### LOGGING                                                                ###
@@ -460,7 +474,7 @@ CreateBrokenLog=yes
 # newsserver etc.
 DumpCore=no
 
-# See also option <LogFile> in secion "PATHS"
+# See also option <LogFile> in section "PATHS"
 
 
 ##############################################################################
@@ -470,8 +484,8 @@ DumpCore=no
 #
 # loggable - only messages will be printed to standard output;
 # colored  - prints messages (with simple coloring for messages categories)
-#            and download progress info; uses escape-sequenses to move cursor;
-# curses   - advanced interactive iterface with the ability to edit 
+#            and download progress info; uses escape-sequences to move cursor;
+# curses   - advanced interactive interface with the ability to edit 
 #            download queue and various output option.
 OutputMode=curses
 
@@ -538,7 +552,7 @@ LoadPars=all
 # all par2-files will be downloaded before verification and repair starts.
 # The option <RenameBroken> must be set to "no", otherwise the par-checker
 # may not find renamed files and fail.
-ParCheck=yes
+ParCheck=no
 
 # Automatic par-repair (yes, no).
 #
@@ -606,10 +620,6 @@ ParPauseQueue=no
 #
 # Enable this option for automatic deletion of unneeded (paused) par-files 
 # from download queue after successful check/repair.
-#
-# NOTE: before cleaning up the program checks if all paused files are par-files.
-# If there are paused non-par-files (this means that you have paused them
-# manually), the cleanup will be skipped for this collection.
 ParCleanupQueue=yes
 
 # Delete source nzb-file after successful check/repair (yes, no).
@@ -650,7 +660,7 @@ NzbCleanupDisk=no
 #                           the same nzb-files failed;
 #  NZBPP_CATEGORY     - category assigned to nzb-file (can be empty string).
 #
-# If nzb-file has assotiated postprocess-parameters (which can be set using
+# If nzb-file has associated postprocess-parameters (which can be set using
 # subcommand <O> of command <-E>, for example: nzbget -E G O "myvar=hello !" 10)
 # or using XML-/JSON-RPC (for example via web-interface), they are also passed 
 # as environment variables. These variables have prefix "NZBPR_" in their names.
@@ -666,14 +676,20 @@ NzbCleanupDisk=no
 # the values are passed always in lower case.
 #
 # Return value: nzbget processes the exit code returned by the script:
-#  0  - all OK;
 #  91 - request nzbget to do par-check/repair for current collection in the 
 #       current nzb-file;
 #  92 - request nzbget to do par-check/repair for all collections in the 
 #       current nzb-file;
-# All other return codes are currently ignored, but for future compatibility 
-# use value "0" (or do not specify any exit code, in this case system uses code
-# "0" by default).
+#  93 - post-process successful (status = SUCCESS);
+#  94 - post-process failed (status = FAILURE);
+#  95 - post-process skipped (status = NONE);
+# All other return codes are interpreted as "status unknown".
+#
+# The return value is used to display the status of post-processing in
+# a history view. In addition to status one or more text messages can be
+# passed to history using a special prefix "[HISTORY]" by printing messages
+# to standard output. For example:
+#   echo "[ERROR] [HISTORY] Unpack failed, not enough disk space";
 #
 # NOTE: The parameter NZBPP_NZBCOMPLETED is very important and MUST be checked 
 # even in the simplest scripts.
@@ -714,7 +730,7 @@ NzbCleanupDisk=no
 # in file "postprocess-example.sh".
 PostProcess=/home/ollie/Downloads/script/postprocess.sh
 
-# Allow multiple post-processing for the same nzb-file (yes,no).
+# Allow multiple post-processing for the same nzb-file (yes, no).
 #
 # After the post-processing (par-check and call of a postprocess-script) is
 # completed, nzbget adds the nzb-file to a list of completed-jobs. The nzb-file
@@ -754,6 +770,11 @@ PostPauseQueue=yes
 # by 100 KB/s and download at full speed overnights:
 
 # Time to execute the command (HH:MM).
+#
+# Multiple comma-separated values are accepted.
+# Asterix as hours-part means "every hour".
+#
+# Examples: "08:00", "00:00,06:00,12:00,18:00", "*:00", "*:00,*:30".
 #Task1.Time=08:00
 
 # Week days to execute the command (1-7).
@@ -765,13 +786,16 @@ PostPauseQueue=yes
 # Examples: "1-7", "1-5", "5,6", "1-5, 7".
 #Task1.WeekDays=1-7
 
-# Command to be executed (Pause, Unpause, DownloadRate, Process).
+# Command to be executed (PauseDownload, UnpauseDownload, PauseScan,
+# UnpauseScan, DownloadRate, Process).
 #
 # Possible commands:
-#   Pause        - pauses download;
-#   Unpause      - resumes download;
-#   DownloadRate - sets download rate in KB/s;
-#   Process      - executes external program.
+#   PauseDownload   - pauses download;
+#   UnpauseDownload - resumes download;
+#   PauseScan       - pauses scan of incoming nzb-directory;
+#   UnpauseScan     - resumes scan of incoming nzb-directory;
+#   DownloadRate    - sets download rate in KB/s;
+#   Process         - executes external program.
 #Task1.Command=DownloadRate
 
 # Download rate to be set if the command is "DownloadRate" (kilobytes/sec).
@@ -784,10 +808,19 @@ PostPauseQueue=yes
 
 # Path to the porgram to execute if the command is "Process".
 #
-# Example: /home/user/fetch-nzb.sh
+# Example: "Task1.Process=/home/user/fetch-nzb.sh".
 #
 # If the option <TaskX.Command> is not set to "Process" this option
 # is ignored and can be omitted.
+#
+# NOTE: it's allowed to add parameters to command line. If filename or
+# any parameter contains spaces it must be surrounded with single quotation
+# marks. If filename/parameter contains single quotation marks, each of them 
+# must be replaced with two single quotation marks and the resulting filename/
+# parameter must be surrounded with single quotation marks.
+# Example: '/home/user/download/my scripts/task process.sh' 'world''s fun'.
+# In this example one parameter (world's fun) is passed to the script 
+# (task process.sh).
 #Task1.Process=
 
 #Task2.Time=20:00
@@ -804,16 +837,17 @@ PostPauseQueue=yes
 # 1) Disable par-checking and -repairing ("ParCheck=no"). VERY important,
 #    because par-checking/repairing needs a lot of CPU-power and 
 #    significantly increases disk usage;
-# 2) Try to activate option <DirectWrite> ("DirectWrite=yes");
+# 2) Try to activate option <DirectWrite> ("DirectWrite=yes"), especially
+#    if you use EXT3-partitions;
 # 3) Disable option <CrcCheck> ("CrcCheck=no");
 # 4) Disable option <ContinuePartial> ("ContinuePartial=no");
 # 5) Do not limit download rate ("DownloadRate=0"), because the bandwidth 
-#    throttling eats CPU time;
-# 6) Disable logging for info- and debug-messages ("InfoTarget=none", 
+#    throttling eats some CPU time;
+# 6) Disable logging for detail- and debug-messages ("DetailTarget=none", 
 #    "DebugTarget=none");
 # 7) Run the program in daemon (Posix) or service (Windows) mode and use
 #    remote client for short periods of time needed for controlling of 
 #    download process on server. Daemon/Service mode eats less CPU 
-#    resources due to not updating of output on screen.
+#    resources than console server mode due to not updating the screen.
 # 8) Increase the value of option <WriteBufferSize> or better set it to 
 #    "-1" (max/auto) if you have spare 5-20 MB of memory.

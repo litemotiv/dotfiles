@@ -1,9 +1,14 @@
 Xcursor.theme:whiteglass
 
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hinstyle:   hintslight
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 0
+Xft.antialias: 1
+Xft.rgba: rgb
+
+dzen2.background: black
+dzen2.font: -*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*
 
 URxvt.buffered: true
 URxvt.transparent: true

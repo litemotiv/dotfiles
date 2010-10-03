@@ -13,6 +13,7 @@ setopt AUTO_CD
 setopt NOMATCH
 setopt NOTIFY
 setopt CORRECT
+setopt extended_glob
 unsetopt BEEP
 
 bindkey '\e[3~' delete-char
