@@ -12,4 +12,4 @@ mpd_host yuki
 mpd_port 6600
 
 TEXT
-${if_mpd_playing}$mpd_artist - $mpd_title $mpd_elapsed/$mpd_length  |${endif}  $loadavg - ${freq_g}Ghz  |  $battery  |  $time
+${if_mpd_playing}$mpd_artist - $mpd_title $mpd_elapsed/$mpd_length (${mpd_bitrate}k) |${endif} $loadavg - ${freq_g}Ghz ${platform coretemp.0 temp 1}°C/${platform coretemp.1 temp 1}°C | $battery | $time

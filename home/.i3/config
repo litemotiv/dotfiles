@@ -88,7 +88,6 @@ bind Mod1+Shift+19 m10
 
 # Mod1+Enter starts a new terminal
 bind Mod1+36 exec /usr/bin/urxvtc
-#bind Mod1+36 exec /usr/bin/terminal
 
 # Mod1+c kills the current client
 bind Mod1+54 kill
@@ -98,12 +97,17 @@ bind Mod1+54 kill
 bind Mod1+33 exec /usr/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'
 
 # MPD
-bind 122 exec mpc volume -2 > /dev/null 2>&1
-bind 123 exec mpc volume +2 > /dev/null 2>&1
-bind 171 exec mpc next > /dev/null 2>&1
-bind 172 exec mpc toggle > /dev/null 2>&1
-bind 173 exec mpc prev > /dev/null 2>&1
-bind 174 exec mpc stop > /dev/null 2>&1
+#bind 122 exec mpc volume -2 > /dev/null 2>&1
+#bind 123 exec mpc volume +2 > /dev/null 2>&1
+#bind 171 exec mpc next > /dev/null 2>&1
+#bind 172 exec mpc toggle > /dev/null 2>&1
+#bind 173 exec mpc prev > /dev/null 2>&1
+#bind 174 exec mpc stop > /dev/null 2>&1
+
+bind 122 exec /usr/bin/amixer set "Front Speaker" 5-
+bind 123 exec /usr/bin/amixer set "Front Speaker" 5+
+bind 232 exec /usr/local/bin/brightness down
+bind 233 exec /usr/local/bin/brightness up
 
 # Mod1+Shift+e exits i3
 bind Mod1+Shift+26 exit
@@ -117,6 +121,8 @@ assign urxvt 2
 # start applications
 exec sh /home/ollie/.fehbg
 #exec conky | dzen2 -w 1000 -x 280 -y 1400 -h 15 -ta r > /dev/null 2>&1
-exec i3bar -c conky -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1 
-exec urxvtc
-exec xcompmgr -f -D 5
+exec /usr/bin/killall conky
+#exec /usr/bin/i3bar -c /usr/bin/conky -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1 
+exec /usr/bin/i3bar -c /usr/bin/conky --color-inactive-ws-bg 333333 --color-active-ws-bg 666633 --color-bar-fg dddddd -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1  
+exec /usr/bin/urxvtc
+#exec /usr/bin/xcompmgr -f -D 5

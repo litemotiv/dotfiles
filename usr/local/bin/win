@@ -1,2 +1,2 @@
 #!/bin/sh
-VBoxSDL -vm "Windows XP Pro"
+VBoxSDL -hostkey 311 0 -vm "Windows XP Pro"
