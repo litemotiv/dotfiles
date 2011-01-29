@@ -11,7 +11,7 @@ export MPD_HOST=yuki
 sh /home/ollie/.config/feh/fehbg
 
 if [ -z $(pidof conky) ]; then
-	conky | while read -r; do xsetroot -name "$REPLY"; done
+	conky | while read -r; do xsetroot -name "$REPLY"; done &
 fi
 
 exec dbus-launch ck-launch-session /usr/bin/dwm
