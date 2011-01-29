@@ -1,4 +1,4 @@
-HISTFILE=~/.zhistory
+HISTFILE=~/.config/zhistory
 HISTSIZE=1000
 SAVEHIST=1000
 LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
