@@ -14,6 +14,8 @@ if [ -z $(pidof conky) ]; then
 	conky | while read -r; do xsetroot -name "$REPLY"; done &
 fi
 
+exec /usr/bin/urxvtc &
+exec /usr/bin/parcellite -n -d &
 exec dbus-launch ck-launch-session /usr/bin/dwm
 #exec /usr/bin/i3 --force-xinerama -V -d all >/home/ollie/.config/i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
 
