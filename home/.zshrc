@@ -3,7 +3,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
-alias ls='ls --color=auto -h'
+alias ls='ls --color=auto -Ap --si'
+alias bb='sudo /usr/bin/bauerbill'
 alias grep='grep -n --color=auto'
 alias www='/usr/bin/chromium --proxy-server=127.0.0.1:8118'
 
@@ -34,7 +35,7 @@ compinit
 autoload -U colors
 colors
 
-PROMPT="[%{$fg_bold[black]%}%n@%m %{$fg_bold[blue]%}%~%{$reset_color%}]%% "
+PROMPT="[%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}%~%{$reset_color%}]%% "
 
 if [[ ${TERM} != "linux" ]] then
 	precmd () { print -Pn "\e]0;[%m] %~\a" }

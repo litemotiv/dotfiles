@@ -101,9 +101,9 @@ assign urxvt 2
 
 # start applications
 exec sh /home/ollie/.fehbg
-exec /usr/bin/killall conky
+#exec /usr/bin/killall conky
 #exec /usr/bin/xcalib /home/ollie/source/hp.icc
-exec /usr/bin/xsetroot -cursor_name left_ptr
-exec /usr/bin/i3bar -m -s ~/.config/i3/ipc.sock -c /usr/bin/conky --color-inactive-ws-bg 333333 --color-active-ws-bg 666633 --color-bar-fg dddddd -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1  
+#exec /usr/bin/xsetroot -cursor_name left_ptr
+#exec /usr/bin/i3bar -m -s ~/.config/i3/ipc.sock -c /usr/bin/conky --color-inactive-ws-bg 333333 --color-active-ws-bg 666633 --color-bar-fg dddddd -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1  
 exec /usr/bin/urxvtc
 

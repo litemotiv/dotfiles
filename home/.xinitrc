@@ -8,7 +8,7 @@ export MPD_HOST=yuki
 /usr/bin/urxvtd -q -o -f
 
 #exec dbus-launch ck-launch-session /usr/bin/i3 --force-xinerama
-sh /home/ollie/.config/feh/fehbg
+sh /home/ollie/.fehbg
 
 if [ -z $(pidof conky) ]; then
 	conky | while read -r; do xsetroot -name "$REPLY"; done &

@@ -13,12 +13,22 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = False;    /* False means bottom bar */
 
+#define NUMCOLORS         4
+static const char colors[NUMCOLORS][ColLast][8] = {
+  //border   foreground background
+  { "#000033", "#dddddd", "#000033" },  // normal
+  { "#000088", "#ffffff", "#000088" },  // selected
+  { "#ff0000", "#000000", "#ffff00" },  // urgent/warning  (black on yellow)
+  { "#ff0000", "#ffffff", "#ff0000" },  // error (white on red)
+  // add more here
+};
+	  
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
+	{ "Xdialog",  "Xdialog",  NULL,       0,            True,        -1 },
 	{ NULL,		  "urxvt",    NULL,       2,            False,       -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 };

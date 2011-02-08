@@ -1,32 +1,19 @@
 Xcursor.theme:default
 
-Xft.dpi: 96
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 0
-Xft.antialias: 1
-Xft.rgba: rgb
-
-dzen2.background: black
-dzen2.font: -*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*
+Xft.dpi: 100
 
 URxvt.buffered: true
-URxvt.transparent: true
-urxvt*shading:12 
-URxvt.background:black
-URxvt.foreground: #90D918
+!URxvt.transparent: true
+!urxvt*shading:12 
+URxvt.background:#1f1f1f
+!URxvt.foreground: #90D918
+URxvt.foreground: #dcdccc
 URxvt.scrollBar: false
 URxvt.internalBorder: 0
 URxvt.letterSpace: -1
 
-!URxvt.font:xft:envy code r:medium:pixelsize=12
-
 URxvt.font: xft:Monospace:pixelsize=14.5
-!URxvt.boldFont: xft:Monospace:pixelsize=14.5
-!URxvt.font: -Misc-Fixed-Medium-R-Normal--13-120-75-75-C-80-ISO10646-1
-!URxvt.font: -*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*
-!URxvt.boldFont: -*-terminus-*-r-bold-*-12-*-*-*-*-60-*-*
+!URxvt.font: -*-*-*-*-*-*-14-*-*-*-*-*-*-*
 URxvt.italicFont: 
 URxvt.boldItalicFont: 
 
