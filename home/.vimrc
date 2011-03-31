@@ -10,7 +10,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number
-color zenburn
+color xoria256
 
 set autoindent		" always set autoindenting on
 set tabstop=4 

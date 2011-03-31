@@ -3,10 +3,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
-alias ls='ls --color=auto -Ap --si'
+alias ls='ls --group-directories-first --color=auto -Ap --si'
 alias bb='sudo /usr/bin/bauerbill'
 alias grep='grep -n --color=auto'
-alias www='/usr/bin/chromium --proxy-server=127.0.0.1:8118'
 
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
