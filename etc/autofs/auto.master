@@ -5,6 +5,6 @@
 
 #/media/autofs		/etc/autofs/auto.misc	--timeout=5
 /media/net		/etc/autofs/auto.net	--timeout=60
-/media/ssh		/etc/autofs/auto.ssh	--timeout=60
+/media/ssh		/etc/autofs/auto.ssh	--timeout=60 
 /media/ftp		/etc/autofs/auto.ftp	--timeout=60
 
