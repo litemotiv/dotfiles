@@ -1,11 +1,9 @@
 #!/bin/sh
-
 export MPD_HOST=yuki
 /usr/bin/xset r rate 200 30
 /usr/bin/urxvtd -q -o -f
 /usr/local/bin/backlight 8
 
-#exec dbus-launch ck-launch-session /usr/bin/i3 --force-xinerama
 imlibsetroot /home/ollie/pictures/arch-wallpaper-dual.png
 
 if [ -z $(pidof conky) ]; then
@@ -15,4 +13,4 @@ fi
 exec /usr/bin/urxvtc &
 exec dbus-launch ck-launch-session /usr/bin/dwm
 #exec /usr/bin/i3 --force-xinerama -V -d all >/home/ollie/.config/i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
-
+#exec dbus-launch ck-launch-session /usr/bin/i3 --force-xinerama
