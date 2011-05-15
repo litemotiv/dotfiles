@@ -3,6 +3,7 @@
 export MPD_HOST=yuki
 /usr/bin/xset r rate 200 30
 /usr/bin/urxvtd -q -o -f
+/usr/local/bin/backlight 8
 
 #exec dbus-launch ck-launch-session /usr/bin/i3 --force-xinerama
 imlibsetroot /home/ollie/pictures/arch-wallpaper-dual.png
