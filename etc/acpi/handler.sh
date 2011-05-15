@@ -36,7 +36,6 @@ case "$1" in
 		fi
 		
 		echo $NEWVAL > $BRIGHTFILE;
-		logger "$NEWVAL"
 		;;
     *)
         logger "ACPI group/action undefined: $1 / $2"
