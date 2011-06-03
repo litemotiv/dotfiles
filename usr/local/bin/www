@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/chromium-browser --proxy-server=127.0.0.1:8118
+/usr/bin/chromium --proxy-server=127.0.0.1:8118

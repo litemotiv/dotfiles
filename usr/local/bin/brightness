@@ -1,13 +1,13 @@
 #!/bin/sh
-dir='/sys/class/backlight/mbp_backlight/brightness';
+dir='/sys/class/backlight/apple_backlight/brightness';
 val=`cat $dir`;
 
 case "$1" in
 	up)
-		backlight $[val+1];
+		sudo backlight $[val+1];
 		;;
 	down)
-		backlight $[val-1];
+		sudo backlight $[val-1];
 		;;
 	*) echo "usage: $0 {up|down}"
 esac

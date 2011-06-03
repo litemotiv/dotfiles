@@ -4,7 +4,6 @@ SAVEHIST=1000
 LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
 alias ls='ls --group-directories-first --color=auto -Ap --si'
-alias bb='sudo /usr/bin/bauerbill'
 alias grep='grep -n --color=auto'
 
 setopt HIST_IGNORE_ALL_DUPS

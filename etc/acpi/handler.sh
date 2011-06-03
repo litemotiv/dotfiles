@@ -23,7 +23,7 @@ case "$1" in
     button/lid)
 		PREVIOUSVAL=$(cat /tmp/backlight); 
 
-		BRIGHTFILE='/sys/class/backlight/mbp_backlight/brightness';
+		BRIGHTFILE='/sys/class/backlight/apple_backlight/brightness';
 		ACTUALVAL=$(cat $BRIGHTFILE);
 
 		# Disable
