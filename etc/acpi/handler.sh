@@ -10,7 +10,7 @@ case "$1" in
     button/power)
         case "$2" in
             PWRF)   				
-				CHOICE=$(DISPLAY="0:0" Xdialog --menubox "Are you sure?" 200x120 2 "Suspend" "" "Shutdown" "" 2>&1 >/dev/null);
+				CHOICE=$(DISPLAY=":0.0" Xdialog --menubox "Are you sure?" 200x120 2 "Suspend" "" "Shutdown" "" 2>&1 >/dev/null);
 
 				if [[ $CHOICE == "Suspend" ]]; then
 					echo "mem" > /sys/power/state;
