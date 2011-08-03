@@ -8,4 +8,4 @@ export MPD_HOST=yuki
 $HOME/.dotfiles/home/stats.sh &
 
 /usr/bin/urxvtc
-exec ck-launch-session dbus-launch /usr/bin/dwm
+exec ck-launch-session /usr/bin/dwm

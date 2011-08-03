@@ -13,10 +13,8 @@ set number
 color xoria256
 
 set autoindent		" always set autoindenting on
-set tabstop=4 
-set shiftwidth=4 
-set noexpandtab
-set softtabstop=4
+set tabstop=4 shiftwidth=4 expandtab
+"set softtabstop=4
 
 
 " Don't use Ex mode, use Q for formatting
