@@ -1,9 +1,10 @@
-HISTFILE=~/.config/zhistory
+HISTFILE=~/.zhistory
 HISTSIZE=1000
 SAVEHIST=1000
-LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
+#LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
-alias ls='ls --group-directories-first --color=auto -Ap --si'
+#alias ls='ls --group-directories-first --color=auto -Ap --si'
+alias ls='ls -Gph'
 alias grep='grep -n --color=auto'
 
 setopt HIST_IGNORE_ALL_DUPS
@@ -17,10 +18,10 @@ setopt extended_glob
 unsetopt BEEP
 
 bindkey '\e[3~' delete-char
-bindkey '^[[1;5D' backward-word
-bindkey '^[[1;5C' forward-word
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
+bindkey '^[[5~' beginning-of-line
+bindkey '^[[6~' end-of-line
+bindkey "^[[H" backward-word
+bindkey "^[[F" forward-word 
 bindkey '^[[3;5~' delete-word
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
@@ -42,5 +43,5 @@ fi
 
 # if we're not inside tmux, attach or start new session
 if [[ -z "$TMUX" ]]; then
-	tmux att 
+#	tmux att 
 fi
