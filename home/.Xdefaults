@@ -1,6 +1,6 @@
 Xcursor.theme:default
 
-Xft.dpi: 100
+Xft.dpi: 96
 
 URxvt.buffered: true
 URxvt.transparent: true
@@ -10,7 +10,7 @@ URxvt.background:#1c1c1c
 URxvt.foreground: #dcdccc
 URxvt.scrollBar: false
 URxvt.internalBorder: 0
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 
 URxvt.font: xft:Monospace:pixelsize=14.5
 !URxvt.font: -*-*-*-*-*-*-14-*-*-*-*-*-*-*

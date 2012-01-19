@@ -1,10 +1,10 @@
 HISTFILE=~/.zhistory
 HISTSIZE=1000
 SAVEHIST=1000
-#LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
+LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
-#alias ls='ls --group-directories-first --color=auto -Ap --si'
-alias ls='ls -Gph'
+alias ls='ls --group-directories-first --color=auto -Ap --si'
+#alias ls='ls -Gph'
 alias grep='grep -n --color=auto'
 
 setopt HIST_IGNORE_ALL_DUPS
@@ -43,5 +43,5 @@ fi
 
 # if we're not inside tmux, attach or start new session
 if [[ -z "$TMUX" ]]; then
-#	tmux att 
+	tmux att 
 fi
