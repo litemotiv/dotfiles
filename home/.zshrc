@@ -4,6 +4,7 @@ SAVEHIST=1000
 LS_COLORS='di=1;94:ln=1;36:bd=5:or=1;31:ex=1;32'
 
 alias ls='ls --group-directories-first --color=auto -Ap --si'
+alias cower='cower -c'
 #alias ls='ls -Gph'
 alias grep='grep -n --color=auto'
 
@@ -41,7 +42,6 @@ if [[ ${TERM} != "linux" ]] then
 	preexec () { print -Pn "\e]0;[%m] $1\a" }
 fi
 
-# if we're not inside tmux, attach or start new session
 if [[ -z "$TMUX" ]]; then
 	tmux att 
 fi
