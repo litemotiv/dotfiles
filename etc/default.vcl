@@ -9,42 +9,41 @@ sub vcl_recv {
         error 200 "Purged";
     }
 
-    set req.grace = 30s;
-
-    if (req.http.Accept-Encoding) {
-	if (req.url ~ "\.(jpg|png|gif)$") {
-		remove req.http.Accept-Encoding;
-	} elsif (req.http.Accept-Encoding ~ "gzip") {
-		set req.http.Accept-Encoding = "gzip";
-	} elsif (req.http.Accept-Encoding ~ "deflate") {
-		set req.http.Accept-Encoding = "deflate";
-	} else {
-		remove req.http.Accept-Encoding;
-	}
+    if (req.request != "GET" && req.request != "HEAD") {
+        return(pass);
     }
     
-    if (req.url ~ "\.(jpg|gif|png|ico|css|zip|gz|pdf|txt|js|flv|swf|html)$") {
-        unset req.http.Cookie;
-	return(lookup);
-    }
-
-    if (req.request == "GET" && (req.url ~ "(wp-admin|server-status)")) {
+    if (req.url ~ "(wp-admin|server-status|wp-comments-post.php|wp-login.php)") {
         return(pipe);
     }
 
     if (req.http.host ~ "revelopment.nl") {
-        return (pass);
+        return(pass);
+    }
+
+    if (req.http.X-Requested-With == "XMLHttpRequest") {
+        return(pass);
     }
 
     if (req.http.Cookie ~ "wordpress_logged") {
         return(pass);
-    } else {
-        unset req.http.Cookie;
     } 
 
-    if(req.http.X-Requested-With == "XMLHttpRequest" || req.url ~ "(wp-comments-post.php|wp-login.php)") {
-        return (pass);
+    if (req.http.Accept-Encoding) {
+	if (req.url ~ "\.(jpg|png|gif)$") {
+	    remove req.http.Accept-Encoding;
+	} elsif (req.http.Accept-Encoding ~ "gzip") {
+	    set req.http.Accept-Encoding = "gzip";
+	} elsif (req.http.Accept-Encoding ~ "deflate") {
+	    set req.http.Accept-Encoding = "deflate";
+	} else {
+	    remove req.http.Accept-Encoding;
+	}
     }
+    
+    set req.grace = 30s;
+
+    unset req.http.Cookie;
 
     return(lookup);
 }
