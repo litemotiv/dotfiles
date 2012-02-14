@@ -1,103 +1,68 @@
-# This is a basic VCL configuration file for varnish.  See the vcl(7)
-# man page for details on VCL syntax and semantics.
-# 
-# Default backend definition.  Set this to point to your content
-# server.
-# 
 backend default {
     .host = "127.0.0.1";
     .port = "80";
 }
 
-# called after request received
 sub vcl_recv {
-    # purge request
-    if(req.request == "PURGE") {
+    if (req.request == "PURGE") {
         purge_url(req.url);
         error 200 "Purged";
     }
 
-    # grace period serves stale (but cacheable) objects while retrieving from backend
     set req.grace = 30s;
+
+    if (req.http.Accept-Encoding) {
+	if (req.url ~ "\.(jpg|png|gif)$") {
+		remove req.http.Accept-Encoding;
+	} elsif (req.http.Accept-Encoding ~ "gzip") {
+		set req.http.Accept-Encoding = "gzip";
+	} elsif (req.http.Accept-Encoding ~ "deflate") {
+		set req.http.Accept-Encoding = "deflate";
+	} else {
+		remove req.http.Accept-Encoding;
+	}
+    }
     
-    # remove cookies from static files
     if (req.url ~ "\.(jpg|gif|png|ico|css|zip|gz|pdf|txt|js|flv|swf|html)$") {
         unset req.http.Cookie;
 	return(lookup);
     }
 
-    # never cache the admin pages, or the server-status page
     if (req.request == "GET" && (req.url ~ "(wp-admin|server-status)")) {
         return(pipe);
     }
 
-    # exclude domains
     if (req.http.host ~ "revelopment.nl") {
         return (pass);
     }
 
-    # remove all cookies except wordpress
-    if (req.http.Cookie) {
-        if (req.http.Cookie ~ "wordpress_logged") {
-            return(pass);
-        } else {
-            unset req.http.Cookie;
-        }
-    }
+    if (req.http.Cookie ~ "wordpress_logged") {
+        return(pass);
+    } else {
+        unset req.http.Cookie;
+    } 
 
-    # don't cache ajax requests
     if(req.http.X-Requested-With == "XMLHttpRequest" || req.url ~ "(wp-comments-post.php|wp-login.php)") {
         return (pass);
     }
+
+    return(lookup);
 }
 
-# called after succesful fetch from backend
 sub vcl_fetch {
-    # grace period serves stale (but cacheable) objects while retrieving from backend
     set beresp.grace = 30s;
+    set beresp.ttl = 900s;
 
-    if (req.http.Cookie) {
-        set beresp.ttl = 10s;
-    } else {
-        # set default cache time
-        set beresp.ttl = 900s;
-    }
-
-    # Strip cookies for static files and set a long cache expiry time.
     if (req.url ~ "\.(jpg|gif|png|ico|css|zip|gz|pdf|txt|js|flv|swf|html)$") {
-            unset beresp.http.set-cookie;
-            set beresp.ttl = 24h;
+        set beresp.ttl = 24h;
+	unset beresp.http.Set-Cookie;
     }
 
-    # object was not cacheable
-    if (!beresp.cacheable) {
-        set beresp.http.X-Cacheable = "NO: Not Cacheable";
-    
-    # don't cache content for logged in users
-    } elsif (req.http.Cookie ~ "(wordpress_)") {
-        set beresp.http.X-Cacheable = "NO: Got Session";
-        return(pass);
-    
-    # extending lifetime of object artificially
-    } elsif (beresp.ttl < 1s) {
-        set beresp.ttl   = 900s;
-        set beresp.grace = 900s;
-        set beresp.http.X-Cacheable = "YES: FORCED";
-
-    # object was cacheable
-    } else {
-        set beresp.http.X-Cacheable = "YES";
-    }
-    
     return(deliver);
 }
 
 sub vcl_deliver {
-    if (obj.hits > 0) {
-        set resp.http.X-Cache = "HIT";
-    } else {
-        set resp.http.X-Cache = "MISS";
-    }
+    set resp.http.X-Cache-Hits = obj.hits;
 }
 
 # Below is a commented-out copy of the default VCL logic.  If you
