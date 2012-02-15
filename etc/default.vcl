@@ -4,31 +4,38 @@ backend default {
 }
 
 sub vcl_recv {
+    # drop object from cache
     if (req.request == "PURGE") {
         purge_url(req.url);
         error 200 "Purged";
     }
 
+    # exclude request types
     if (req.request != "GET" && req.request != "HEAD") {
         return(pass);
     }
     
+    # exclude urls
     if (req.url ~ "(wp-admin|server-status|wp-comments-post.php|wp-login.php)") {
         return(pipe);
     }
 
+    # exclude hostnames
     if (req.http.host ~ "revelopment.nl") {
         return(pass);
     }
 
+    # exclude headers
     if (req.http.X-Requested-With == "XMLHttpRequest") {
         return(pass);
     }
 
+    # exclude cookies
     if (req.http.Cookie ~ "wordpress_logged") {
         return(pass);
     } 
 
+    # force encoding
     if (req.http.Accept-Encoding) {
 	if (req.url ~ "\.(jpg|png|gif)$") {
 	    remove req.http.Accept-Encoding;
@@ -41,17 +48,23 @@ sub vcl_recv {
 	}
     }
     
+    # grace time for requests while new object is generated
     set req.grace = 30s;
 
+    # kill all remaining cookies
     unset req.http.Cookie;
 
     return(lookup);
 }
 
 sub vcl_fetch {
+    # grace time to keep stale objects in cache
     set beresp.grace = 30s;
+
+    # default expiration
     set beresp.ttl = 900s;
 
+    # expiration for static content
     if (req.url ~ "\.(jpg|gif|png|ico|css|zip|gz|pdf|txt|js|flv|swf|html)$") {
         set beresp.ttl = 24h;
 	unset beresp.http.Set-Cookie;
@@ -61,6 +74,7 @@ sub vcl_fetch {
 }
 
 sub vcl_deliver {
+    # add hit-rate header to response
     set resp.http.X-Cache-Hits = obj.hits;
 }
 
