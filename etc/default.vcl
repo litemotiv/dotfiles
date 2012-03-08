@@ -12,11 +12,11 @@ sub vcl_recv {
 
     # exclude request types
     if (req.request != "GET" && req.request != "HEAD") {
-        return(pass);
+        return(pipe);
     }
     
     # exclude urls
-    if (req.url ~ "(wp-admin|server-status|wp-comments-post.php|wp-login.php)") {
+    if (req.url ~ "(wp-admin|wp-login.php|cart|checkout)") {
         return(pipe);
     }
 
@@ -52,7 +52,10 @@ sub vcl_recv {
     set req.grace = 30s;
 
     # kill all remaining cookies
-    unset req.http.Cookie;
+    #if (req.http.host ~ "poolbrothers.nl") {
+    #} else {
+    #    unset req.http.Cookie;
+    #}
 
     return(lookup);
 }
