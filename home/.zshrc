@@ -21,8 +21,8 @@ unsetopt BEEP
 bindkey '\e[3~' delete-char
 bindkey '^[[5~' beginning-of-line
 bindkey '^[[6~' end-of-line
-bindkey "^[[H" backward-word
-bindkey "^[[F" forward-word 
+bindkey "^[[1~" backward-word
+bindkey "^[[4~" forward-word 
 bindkey '^[[3;5~' delete-word
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward

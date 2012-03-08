@@ -3,16 +3,16 @@ Xcursor.theme:default
 Xft.dpi: 96
 
 URxvt.buffered: true
-!URxvt.transparent: true
-!urxvt*shading:12
-!URxvt.background:#1c1c1c
-URxvt.depth: 32
-URxvt.background: rgba:0000/0000/0000/dddd
+URxvt.transparent: true
+urxvt*shading:12
+URxvt.background:#1c1c1c
+!URxvt.depth: 32
+!URxvt.background: rgba:0000/0000/0000/dddd
 !URxvt.foreground: #90D918
 URxvt.foreground: #dcdccc
 URxvt.scrollBar: false
 URxvt.internalBorder: 0
-URxvt.letterSpace: -2
+URxvt.letterSpace: -1
 
 URxvt.font: xft:Monospace:pixelsize=14.5
 !URxvt.font: -*-*-*-*-*-*-14-*-*-*-*-*-*-*
