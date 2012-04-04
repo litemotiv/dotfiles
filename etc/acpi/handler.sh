@@ -7,9 +7,9 @@
 set $*
 
 case "$1" in
-    button/power)
-        case "$2" in
-            PWRF)   				
+	button/power)
+		case "$2" in
+			PWRF)   				
 				#CHOICE=$(DISPLAY=":0.0" Xdialog --menubox "Are you sure?" 200x120 2 "Suspend" "" "Shutdown" "" 2>&1 >/dev/null);
 
 				#if [[ $CHOICE == "Suspend" ]]; then
@@ -18,26 +18,29 @@ case "$1" in
 				#	systemctl poweroff;
 				#fi
 				#;;
-        esac
+		esac
         ;;
-    button/lid)
-		PREVIOUSVAL=$(cat /tmp/backlight); 
-
-		BRIGHTFILE='/sys/class/backlight/apple_backlight/brightness';
-		ACTUALVAL=$(cat $BRIGHTFILE);
-
-		# Disable
+	button/volumeup)
+		OUTPUT=$(/usr/bin/amixer set Master 5%+ | egrep 'Playback.*?\[o' | egrep -o '\[.+%\]');
+		DISPLAY=":0.0" /usr/bin/xsetroot -name "Volume: $OUTPUT";
+	;;
+	button/volumedown)
+		OUTPUT=$(/usr/bin/amixer set Master 5%- | egrep 'Playback.*?\[o' | egrep -o '\[.+%\]');
+		DISPLAY=":0.0" /usr/bin/xsetroot -name "Volume: $OUTPUT";
+	;;
+	button/lid)
+		BRIGHTNESS='/sys/class/backlight/intel_backlight/brightness';
+		ACTUALVAL=$(cat $BRIGHTNESS);
 		if [[ $ACTUALVAL -gt 0 ]]; then
-			NEWVAL=0;
-			echo $ACTUALVAL > /tmp/backlight;
-		# Enable
+			/usr/bin/synclient TouchpadOff=1;
+			DISPLAY=":0.0" /usr/bin/xbacklight -set 0;
 		else
-			NEWVAL=$PREVIOUSVAL;
+			DISPLAY=":0.0" /usr/bin/xbacklight -set 15;
+			/usr/bin/synclient TouchpadOff=0;
 		fi
 		
-		echo $NEWVAL > $BRIGHTFILE;
-		;;
-    *)
-        logger "ACPI group/action undefined: $1 / $2"
+	;;
+	*)
+		logger "ACPI group/action undefined: $1 / $2"
         ;;
 esac

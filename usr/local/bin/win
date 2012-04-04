@@ -1,2 +1,2 @@
 #!/bin/sh
-VBoxSDL -hostkey 312 0 -vm "Windows XP Pro"
+VBoxSDL --fullscreenresize --hostkey 312 0 --startvm "Windows XP Pro"
