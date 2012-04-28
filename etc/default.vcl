@@ -47,6 +47,11 @@ sub vcl_recv {
 	    remove req.http.Accept-Encoding;
 	}
     }
+
+    # strip out analytics
+    if (req.url ~ "utm_") {
+        set req.url = regsub(req.url, "\?.*$", "");
+    }
     
     # grace time for requests while new object is generated
     set req.grace = 30s;
