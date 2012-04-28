@@ -10,3 +10,4 @@ $HOME/.dotfiles/home/stats.sh &
 /usr/bin/urxvtc
 #exec ck-launch-session /usr/bin/dwm
 /usr/bin/dwm
+#exec /usr/bin/compiz ccp

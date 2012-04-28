@@ -5,17 +5,18 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=100		" keep 50 lines of command line history
+set history=100	" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set incsearch	" do incremental searching
+set hidden		" only hide buffer when switching to keep history
 set number
 set statusline=%F\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
 
 color xoria256
 
-set autoindent		" always set autoindenting on
+set autoindent	" always set autoindenting on
 set tabstop=4 
 set shiftwidth=4 
 set noexpandtab
