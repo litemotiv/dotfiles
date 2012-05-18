@@ -51,8 +51,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *audiolower[]	= { "amixer", "set", "Front Speaker", "5-", NULL };
 static const char *audioraise[] = { "amixer", "set", "Front Speaker", "5+", NULL };
-static const char *brightnessup[] = { "xbacklight", "-inc", "5", NULL };
-static const char *brightnessdown[] = { "xbacklight", "-dec", "5", NULL };
+static const char *brightnessup[] = { "sudo", "backlight", "up", NULL };
+static const char *brightnessdown[] = { "sudo", "backlight", "down", NULL };
 
 static Key keys[] = {
 	/* modifier             key         function        argument */
