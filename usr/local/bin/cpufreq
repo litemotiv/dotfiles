@@ -1,3 +1,0 @@
-#!/bin/sh
-/usr/bin/cpufreq-set -c 0 -g ondemand
-/usr/bin/cpufreq-set -c 1 -g ondemand

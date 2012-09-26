@@ -49,8 +49,8 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
-static const char *audiolower[]	= { "amixer", "set", "Front Speaker", "5-", NULL };
-static const char *audioraise[] = { "amixer", "set", "Front Speaker", "5+", NULL };
+static const char *audiolower[]	= { "volume", "down", NULL };
+static const char *audioraise[] = { "volume", "up", NULL };
 static const char *brightnessup[] = { "sudo", "backlight", "up", NULL };
 static const char *brightnessdown[] = { "sudo", "backlight", "down", NULL };
 
@@ -60,6 +60,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     XK_Return,  spawn,          {.v = termcmd } },
 	{ 0,				    0x1008ff02, spawn,          {.v = brightnessup } },
 	{ 0,				    0x1008ff03, spawn,          {.v = brightnessdown } },
+	{ 0,				    0x1008ff11, spawn,          {.v = audiolower } },
+	{ 0,				    0x1008ff13, spawn,          {.v = audioraise } },
 	{ MODKEY,               XK_b,       togglebar,      {0} },
 	{ MODKEY,               XK_j,       focusstack,     {.i = +1 } },
 	{ MODKEY,               XK_k,       focusstack,     {.i = -1 } },
