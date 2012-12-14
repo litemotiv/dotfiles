@@ -14,8 +14,8 @@ URxvt.background:#1c1c1c
 URxvt.foreground: #dcdccc
 URxvt.scrollBar: false
 URxvt.internalBorder: 0
-URxvt.cursorBlink:1
-URxvt.cursorUnderline:1
+!URxvt.cursorBlink:1
+!URxvt.cursorUnderline:1
 URxvt.letterSpace: -1
 
 URxvt.font: xft:Monospace:pixelsize=14.5
