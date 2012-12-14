@@ -23,6 +23,10 @@ set noexpandtab
 set softtabstop=4
 "set tabstop=4 shiftwidth=4 expandtab
 
+" tab markers
+set list
+set lcs=tab:│┄,trail:·,extends:>,precedes:<,nbsp:&
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
