@@ -1,5 +1,4 @@
 #!/bin/sh
-export MPD_HOST=yuki
 /usr/bin/urxvtd -q -o -f
 /usr/bin/xcalib $HOME/Documents/MacbookAir.icc
 /usr/bin/imlibsetroot --composite -p c $HOME/pictures/arch-wallpaper-1920.png
