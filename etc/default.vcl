@@ -1,12 +1,33 @@
 backend default {
     .host = "127.0.0.1";
-    .port = "80";
+    .port = "8080";
+}
+
+acl block {
+	# knsb
+    "80.126.128.202";
+    "82.168.128.153";
+
+	# osgs 
+	"109.230.251.120";
+
+	# italiaanse vps
+    "89.31.75.119";
 }
 
 sub vcl_recv {
+    #block
+    if (client.ip ~ block) {
+		error 403 "";
+	}
+
+    if (req.http.user-agent ~ "Java") {
+		error 403 "";
+	}
+
     # drop object from cache
     if (req.request == "PURGE") {
-        purge_url(req.url);
+        ban_url(req.url);
         error 200 "Purged";
     }
 
@@ -20,32 +41,22 @@ sub vcl_recv {
         return(pipe);
     }
 
-    # exclude hostnames
-    if (req.http.host ~ "revelopment.nl") {
-        return(pass);
-    }
-
     # exclude headers
     if (req.http.X-Requested-With == "XMLHttpRequest") {
         return(pass);
     }
 
-    # exclude cookies
-    if (req.http.Cookie ~ "wordpress_logged") {
-        return(pass);
-    } 
-
     # force encoding
     if (req.http.Accept-Encoding) {
-	if (req.url ~ "\.(jpg|png|gif)$") {
-	    remove req.http.Accept-Encoding;
-	} elsif (req.http.Accept-Encoding ~ "gzip") {
-	    set req.http.Accept-Encoding = "gzip";
-	} elsif (req.http.Accept-Encoding ~ "deflate") {
-	    set req.http.Accept-Encoding = "deflate";
-	} else {
-	    remove req.http.Accept-Encoding;
-	}
+		if (req.url ~ "\.(jpg|png|gif)$") {
+			remove req.http.Accept-Encoding;
+		} elsif (req.http.Accept-Encoding ~ "gzip") {
+			set req.http.Accept-Encoding = "gzip";
+		} elsif (req.http.Accept-Encoding ~ "deflate") {
+			set req.http.Accept-Encoding = "deflate";
+		} else {
+			remove req.http.Accept-Encoding;
+		}
     }
 
     # strip out analytics
@@ -53,6 +64,17 @@ sub vcl_recv {
         set req.url = regsub(req.url, "\?.*$", "");
     }
     
+	# remove static cookies
+    if (req.url ~ "\.(jpg|gif|png|ico|css|zip|ttf|otf|woff|pdf|js)$") {
+        unset req.http.Cookie;
+		return (lookup);
+	}
+
+    # exclude cookies
+    if (req.http.Cookie ~ "wordpress_logged") {
+        return(pass);
+    } 
+
     # grace time for requests while new object is generated
     set req.grace = 30s;
 
@@ -66,17 +88,22 @@ sub vcl_recv {
 }
 
 sub vcl_fetch {
+	# set public cache control
+	unset beresp.http.Cache-Control;
+	unset beresp.http.expires;
+
     # grace time to keep stale objects in cache
     set beresp.grace = 30s;
 
-    # default expiration
-    set beresp.ttl = 900s;
-
-    # expiration for static content
-    if (req.url ~ "\.(jpg|gif|png|ico|css|zip|gz|pdf|txt|js|flv|swf|html)$") {
-        set beresp.ttl = 24h;
-	unset beresp.http.Set-Cookie;
-    }
+    # cache expiration / ttl = varnish / cache-control = browser
+    if (req.url ~ "\.(jpg|gif|png|ico|zip|ttf|otf|woff|pdf)$") {
+		unset beresp.http.Set-Cookie;
+        set beresp.ttl = 4h;
+		set beresp.http.Cache-Control = "public, max-age=2500000";
+	} else {
+		set beresp.ttl = 900s;
+		set beresp.http.Cache-Control = "public, max-age=900";
+	}
 
     return(deliver);
 }
