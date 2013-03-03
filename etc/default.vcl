@@ -25,21 +25,24 @@ sub vcl_recv {
 		error 403 "";
 	}
 
-    # drop object from cache
-    if (req.request == "PURGE") {
-        ban_url(req.url);
-        error 200 "Purged";
-    }
+	if (req.request == "PURGE") {
+		return (lookup);
+	}
 
-    # exclude request types
+	if ( ! req.http.X-Forwarded-For)
+	{
+		set req.http.X-Forwarded-For = client.ip;
+	}
+
+	# exclude request types
     if (req.request != "GET" && req.request != "HEAD") {
         return(pipe);
     }
-    
+
     # exclude urls
-    if (req.url ~ "(wp-admin|wp-login.php|cart|checkout)") {
-        return(pipe);
-    }
+    #if (req.url ~ "(wp-admin|wp-login.php|cart|checkout)") {
+    #    return(pipe);
+    #}
 
     # exclude headers
     if (req.http.X-Requested-With == "XMLHttpRequest") {
@@ -113,6 +116,19 @@ sub vcl_deliver {
     set resp.http.X-Cache-Hits = obj.hits;
 }
 
+sub vcl_hit {
+    if (req.request == "PURGE") {
+        purge;
+        error 200 "Purged";
+    }
+}
+
+sub vcl_miss {
+    if (req.request == "PURGE") {
+        purge;
+        error 200 "Purged";
+    }
+}
 # Below is a commented-out copy of the default VCL logic.  If you
 # redefine any of these subroutines, the built-in logic will be
 # appended to your code.
