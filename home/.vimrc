@@ -49,6 +49,15 @@ if &t_Co > 2 || has("gui_running")
   set guioptions=
 endif
 
+" Fix ctrl-arrow keys when terminal is *screen
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
