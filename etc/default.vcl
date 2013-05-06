@@ -29,37 +29,9 @@ sub vcl_recv {
 		return (lookup);
 	}
 
-	if ( ! req.http.X-Forwarded-For)
-	{
-		set req.http.X-Forwarded-For = client.ip;
-	}
-
-	# exclude request types
-    if (req.request != "GET" && req.request != "HEAD") {
-        return(pipe);
-    }
-
-    # exclude urls
-    #if (req.url ~ "(wp-admin|wp-login.php|cart|checkout)") {
-    #    return(pipe);
-    #}
-
     # exclude headers
     if (req.http.X-Requested-With == "XMLHttpRequest") {
         return(pass);
-    }
-
-    # force encoding
-    if (req.http.Accept-Encoding) {
-		if (req.url ~ "\.(jpg|png|gif)$") {
-			remove req.http.Accept-Encoding;
-		} elsif (req.http.Accept-Encoding ~ "gzip") {
-			set req.http.Accept-Encoding = "gzip";
-		} elsif (req.http.Accept-Encoding ~ "deflate") {
-			set req.http.Accept-Encoding = "deflate";
-		} else {
-			remove req.http.Accept-Encoding;
-		}
     }
 
     # strip out analytics
@@ -80,14 +52,6 @@ sub vcl_recv {
 
     # grace time for requests while new object is generated
     set req.grace = 30s;
-
-    # kill all remaining cookies
-    #if (req.http.host ~ "poolbrothers.nl") {
-    #} else {
-    #    unset req.http.Cookie;
-    #}
-
-    return(lookup);
 }
 
 sub vcl_fetch {
@@ -98,14 +62,20 @@ sub vcl_fetch {
     # grace time to keep stale objects in cache
     set beresp.grace = 30s;
 
+	# varnish ttl
+	set beresp.ttl = 900s;
+
     # cache expiration / ttl = varnish / cache-control = browser
-    if (req.url ~ "\.(jpg|gif|png|ico|zip|ttf|otf|woff|pdf)$") {
+    if (req.url ~ "\.(jpg|gif|png|ico|zip|ttf|otf|woff|eot|htc|pdf)$") {
 		unset beresp.http.Set-Cookie;
-        set beresp.ttl = 4h;
-		set beresp.http.Cache-Control = "public, max-age=2500000";
+        #set beresp.ttl = 4h;
+		set beresp.http.Cache-Control = "public, max-age=5184000";
 	} else {
-		set beresp.ttl = 900s;
-		set beresp.http.Cache-Control = "public, max-age=900";
+
+		if (req.http.host ~ "lexlumen") {
+		} else {
+			set beresp.http.Cache-Control = "public, max-age=900";
+		}
 	}
 
     return(deliver);
