@@ -11,8 +11,8 @@ acl block {
 	# osgs 
 	"109.230.251.120";
 
-	# italiaanse vps
-    "89.31.75.119";
+	# probeert ruimtevolk te spideren
+	"62.219.8.237";
 }
 
 sub vcl_recv {
@@ -45,8 +45,8 @@ sub vcl_recv {
 		return (lookup);
 	}
 
-    # exclude cookies
-    if (req.http.Cookie ~ "wordpress_logged") {
+    # exclude wordpress sessions
+    if (req.http.Cookie ~ "wordpress_logged" || req.url ~ "/wp-admin/") {
         return(pass);
     } 
 
@@ -66,13 +66,12 @@ sub vcl_fetch {
 	set beresp.ttl = 900s;
 
     # cache expiration / ttl = varnish / cache-control = browser
-    if (req.url ~ "\.(jpg|gif|png|ico|zip|ttf|otf|woff|eot|htc|pdf)$") {
+    if (req.url ~ "\.(jpg|jpeg|gif|png|ico|ttf|otf|woff|eot|htc)$") {
 		unset beresp.http.Set-Cookie;
-        #set beresp.ttl = 4h;
+        set beresp.ttl = 4h;
 		set beresp.http.Cache-Control = "public, max-age=5184000";
 	} else {
-
-		if (req.http.host ~ "lexlumen") {
+		if (req.http.host ~ "lexlumen" || req.url ~ "/wp-admin/") {
 		} else {
 			set beresp.http.Cache-Control = "public, max-age=900";
 		}
