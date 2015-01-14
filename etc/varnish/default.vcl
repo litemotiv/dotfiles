@@ -4,15 +4,7 @@ backend default {
 }
 
 acl block {
-	# knsb
-    "80.126.128.202";
-    "82.168.128.153";
-
-	# osgs 
-	"109.230.251.120";
-
-	# probeert ruimtevolk te spideren
-	"62.219.8.237";
+	"197.242.150.97";
 }
 
 sub vcl_recv {
@@ -69,7 +61,7 @@ sub vcl_fetch {
     if (req.url ~ "\.(jpg|jpeg|gif|png|ico|ttf|otf|woff|eot|htc)$") {
 		unset beresp.http.Set-Cookie;
         set beresp.ttl = 4h;
-		set beresp.http.Cache-Control = "public, max-age=5184000";
+		set beresp.http.Cache-Control = "public, max-age=31536000";
 	} else {
 		if (req.http.host ~ "lexlumen" || req.url ~ "/wp-admin/") {
 		} else {
