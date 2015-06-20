@@ -4,7 +4,10 @@ backend default {
 }
 
 acl block {
-	"197.242.150.97";
+	"162.144.112.80";
+	"197.251.172.101"; # DTS
+	"46.235.46.8"; # KNSB
+	"83.83.91.242"; # KNSB
 }
 
 sub vcl_recv {
@@ -13,7 +16,11 @@ sub vcl_recv {
 		error 403 "";
 	}
 
-    if (req.http.user-agent ~ "Java") {
+    if (req.url ~ "/(uploads|files|blogs.dir)/.*\.php") {
+		error 403 "";
+	}
+
+    if (req.url ~ "xmlrpc") {
 		error 403 "";
 	}
 
