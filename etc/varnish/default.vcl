@@ -52,10 +52,8 @@ sub vcl_recv {
         return(pass);
     } 
 	
-	# hacky? allow css and js to be fresh for logged in users (below)
-    #if (req.url ~ "\.(css|js)") {
-        unset req.http.Cookie;
-	#}
+    # remove remaining cookies
+	unset req.http.Cookie;
 }
 
 sub vcl_backend_response {
@@ -70,7 +68,7 @@ sub vcl_backend_response {
 	# cache expiration / ttl = varnish / cache-control = browser
 	if (bereq.url ~ "\.(jpg|jpeg|gif|png|ico|ttf|otf|woff|eot|htc)") {
 		unset beresp.http.Set-Cookie;
-		set beresp.ttl = 2h;
+		set beresp.ttl = 1h;
 		set beresp.http.Cache-Control = "public, max-age=31536000";
 	} 
 	
