@@ -1,9 +1,0 @@
-!clear control
-clear mod4
-clear lock
-
-!keycode 37 = Control_L
-!keycode 133 = Control_L
-keycode 66 = Multi_key
-add control = Super_L 
-add control = Super_R 
