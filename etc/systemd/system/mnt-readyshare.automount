@@ -1,0 +1,8 @@
+[Unit]
+Description=Automount Readyshare
+
+[Automount]
+Where=/mnt/readyshare
+
+[Install]
+WantedBy=multi-user.target
