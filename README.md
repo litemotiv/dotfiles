@@ -10,6 +10,10 @@
 
 #### 2) Automount Readyshare
 
+Create /mnt/readyshare/
+
+[Unit files]
+
 /etc/systemd/system/mnt-readyshare.mount 
 
 /etc/systemd/system/mnt-readyshare.automount
