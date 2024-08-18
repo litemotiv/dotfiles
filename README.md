@@ -1,13 +1,13 @@
 ## My current Fedora config
 
 ### 1) Extension manager
-- ~~Blur my shell~~
-- ~~Dash to dock~~
 - V-Shell (Vertical Workspaces)
 - Disable workspace switcher overlay 
 - Task widget
 - Vitals
 - OpenWeather Refined
+- - ~~Blur my shell~~
+- ~~Dash to dock~~
 - User themes (opt)
 
 ### 2) Automount Readyshare
@@ -57,7 +57,6 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | Flameshot | RPM |
 | Flatseal | Flathub |
 | Gnome Tweaks | RPM |
-| Kooha | Flathub |
 | MusicBrainz Picard | RPM |
 | Nicotine+ | RPM |
 | qBittorrent | Flathub |
