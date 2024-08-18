@@ -4,6 +4,7 @@
 - ~~Blur my shell~~
 - ~~Dash to dock~~
 - V-Shell (Vertical Workspaces)
+- Disable workspace switcher overlay 
 - Task widget
 - Vitals
 - OpenWeather Refined
