@@ -6,7 +6,7 @@
 - Task widget
 - Vitals
 - OpenWeather Refined
-- - ~~Blur my shell~~
+- ~~Blur my shell~~
 - ~~Dash to dock~~
 - User themes (opt)
 
