@@ -41,6 +41,7 @@ Create /mnt/readyshare/
 ### 4) Codecs (minimal)
 
 https://rpmfusion.org/Configuration
+
 https://rpmfusion.org/Howto/Multimedia
 
 Add repositories `rpmfusion-free` & `rpmfusion-free-updates`
