@@ -51,6 +51,7 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | Name | Source |
 | --- | --- |
 | AmiBerry | Flathub |
+| Apostrophe | Flathub |
 | Calibre | RPM |
 | EarTag | Flathub |
 | Extension Manager | Flathub |
