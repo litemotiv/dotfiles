@@ -1,14 +1,18 @@
 ## My current Fedora config
 
 ### 1) Extension manager
-- V-Shell (Vertical Workspaces)
+
 - Disable workspace switcher overlay 
 - Task widget
 - Vitals
 - OpenWeather Refined
-- ~~Blur my shell~~
-- ~~Dash to dock~~
-- User themes (opt)
+
+#### Optional
+- Blur my shell
+- Dash to dock
+- V-Shell (Vertical Workspaces)
+- No overview at start-up
+- User themes
 
 ### 2) Automount Readyshare
 
