@@ -41,13 +41,9 @@ Create /mnt/readyshare/
 ### 4) Codecs (minimal)
 
 https://rpmfusion.org/Configuration
+https://rpmfusion.org/Howto/Multimedia
 
 Add repositories `rpmfusion-free` & `rpmfusion-free-updates`
-
-- ffmpeg-free
-- libavcodec-free
-- libavcodec-freeworld
-- mesa-va-drivers-freeworld
 
 Test hardware acceleration for h264/h265 with `nvtop`
 
