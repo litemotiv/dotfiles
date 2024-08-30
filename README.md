@@ -4,6 +4,7 @@
 
 - Disable workspace switcher overlay 
 - Task widget
+- Tiling Shell
 - Vitals
 - OpenWeather Refined
 
