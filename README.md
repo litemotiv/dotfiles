@@ -62,12 +62,15 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | Gnome Tweaks | RPM |
 | MusicBrainz Picard | RPM |
 | Nicotine+ | RPM |
+| Obsidian | Flathub |
 | qBittorrent | Flathub |
 | Switcheroo | Flathub |
 | Tauon | Flathub |
 | Ptyxis Terminal | RPM |
 | Vice | Flathub |
 | VLC | Flathub |
+| Zed | Flathub |
+| Zen Browser | Flathub |
 
 #### Console ####
 | Name | Source |
