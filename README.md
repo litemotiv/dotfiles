@@ -81,3 +81,12 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | shntool | RPM |
 | vim-enhanced | RPM |
 
+### 6) Audio scripts
+
+Join separate FLAC files into single FLAC
+
+`# shntool join *.flac -o flac`
+
+Embed CUE file into flac
+
+`# metaflac --import-cuesheet-from="album.cue" --set-tag-from-file="CUESHEET=album.cue" "album.flac"`
