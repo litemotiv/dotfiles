@@ -78,5 +78,6 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | htop | RPM |
 | nvtop | RPM |
 | rpmreaper | RPM |
+| shntool | RPM |
 | vim-enhanced | RPM |
 
