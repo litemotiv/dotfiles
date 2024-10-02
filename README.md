@@ -36,13 +36,14 @@ Test hardware acceleration for h264/h265 with `nvtop`
 
 ### 4) Extension manager
 
-- Disable workspace switcher overlay 
+- Disable workspace switcher overlay
+- Hide top bar 
 - Task widget
 - Tiling Shell
 - Vitals
-- OpenWeather Refined
 
 #### Optional
+- OpenWeather Refined
 - Blur my shell
 - Dash to dock
 - V-Shell (Vertical Workspaces)
