@@ -1,0 +1,23 @@
+@-moz-document url-prefix("chrome:") {
+  
+  /*
+  Hide 'Extension' text in the address bar
+  */
+  #identity-box.extensionPage #identity-icon-label {
+    visibility: collapse;
+  }
+
+    #identity-box.extensionPage:hover #identity-icon-label {
+      visibility: visible;
+    }
+
+  tab[label="New Tab"] .tab-content {
+    background: url(file:///home/olivier/.zen/new-tab.svg) no-repeat center !important;
+    filter: invert(.4);
+    background-size:66% !important;
+  }
+
+  tab[label="New Tab"] .tab-icon-stack {
+    opacity:0;
+  }
+}
