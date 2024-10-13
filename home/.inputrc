@@ -3,3 +3,6 @@
 
 "\C-[OB": history-search-forward
 "\C-[[B": history-search-forward
+
+set show-all-if-ambiguous on
+set completion-ignore-case on
