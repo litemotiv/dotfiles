@@ -56,18 +56,22 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | AmiBerry | Flathub |
 | Apostrophe | Flathub |
 | Calibre | RPM |
+| draw.io | Flathub |
 | EarTag | Flathub |
 | Extension Manager | Flathub |
 | Flameshot | RPM |
 | Flatseal | Flathub |
+| FreeFileSync | Flathub |
 | Gnome Tweaks | RPM |
+| kitty | RPM |
 | MusicBrainz Picard | RPM |
 | Nicotine+ | RPM |
 | Obsidian | Flathub |
 | qBittorrent | Flathub |
+| Raspberry Pi Imager | Flathub |
 | Switcheroo | Flathub |
 | Tauon | Flathub |
-| Ptyxis Terminal | RPM |
+| Ptyxis | RPM |
 | Vice | Flathub |
 | VLC | Flathub |
 | Zed | Flathub |
@@ -77,6 +81,7 @@ Test hardware acceleration for h264/h265 with `nvtop`
 | Name | Source |
 | --- | --- |
 | htop | RPM |
+| ncmpc | RPM |
 | nvtop | RPM |
 | rpmreaper | RPM |
 | shntool | RPM |
