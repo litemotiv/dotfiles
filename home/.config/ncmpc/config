@@ -4,7 +4,7 @@
 
 ############## Connection ###################
 ## Connect to mpd running on a specified host
-#host = "localhost"
+host = 10.0.0.6
 
 ## Connect to mpd on the specified port.
 #port = 6600
@@ -86,7 +86,7 @@ auto-center = yes
 
 ## list-format
 ## The format used to display songs in the main window.
-list-format = "%name%|[[%artist%|%performer%|%composer%] - ][%album%] - [%title%|%shortfile%]"
+list-format = "%name%|[[%artist%|%performer%|%composer%] - ][%album% - ][%track% - ] [%title%|%shortfile%]"
 
 ## The format used to display songs in the search window.
 #search-format = "%name%|[[%artist%|%performer%|%composer%] - ][%title%|%shortfile%]"
