@@ -80,6 +80,7 @@ Test hardware acceleration for h264/h265 with `nvtop`
 #### Console ####
 | Name | Source |
 | --- | --- |
+| eza | RPM |
 | htop | RPM |
 | ncmpc | RPM |
 | nvtop | RPM |
