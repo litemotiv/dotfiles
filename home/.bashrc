@@ -24,8 +24,9 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-alias ls="ls --color=auto --hyperlink=auto"
+#alias ls="ls --color=auto --hyperlink=auto"
+alias ls="eza --hyperlink --icons"
 alias icat="kitten icat"
 
 TZ="Europe/Amsterdam"
-PS1="\n\033[36m\]\D{%H:%M} \[\033[35m\]\w \[\033[0m\] \n\[\033[31m\]\u@\h → \[\033[0m\]"
+PS1="\n\[\033[35m\]\w \[\033[0m\] \n\033[36m\]\D{%H:%M} \[\033[31m\]\u@\h → \[\033[0m\]"
