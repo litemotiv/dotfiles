@@ -1,6 +1,7 @@
 set hidden										" allow multiple buffers to be opened
 set number										" show line numbers
 set cindent tabstop=4 shiftwidth=4				" keep indentation on new line
+filetype plugin indent on
 
 "set list
 set listchars=tab:▸·,trail:·					" Make tab characters and trailing spaces visible

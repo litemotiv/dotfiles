@@ -82,7 +82,7 @@ mpd_music_dir = /mnt/readyshare/Music
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
-#visualizer_in_stereo = yes
+visualizer_in_stereo = no
 #
 ##
 ## Note: set below to >=10 only if you have synchronization issues with
