@@ -20,3 +20,11 @@ hi statusline ctermbg=0 ctermfg=76				" statusline colors
 hi Folded ctermfg=Black							" fold colors
 hi Folded ctermbg=LightBlue
 hi SpecialKey ctermfg=235						" tabs and special chars colors
+
+" plugin: buftabline
+hi TablineFill ctermbg=22 ctermfg=234
+hi Tabline cterm=NONE ctermbg=234 ctermfg=240
+hi TabLineSel ctermfg=236 ctermbg=39
+ 
+let g:buftabline_numbers=1
+let g:buftabline_indicators=1

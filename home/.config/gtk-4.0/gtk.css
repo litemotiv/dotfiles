@@ -21,11 +21,11 @@
 @define-color dialog_fg_color @popover_fg_color;
 
 @define-color view_bg_color #073642;
+efine-color view_bg_color #13161c;
 @define-color view_fg_color #eee8d5;
 
 @define-color card_bg_color #123a44;
 @define-color card_fg_color #fdf6e3;
-
 
 @define-color warning_bg_color #CB4B16;
 @define-color warning_fg_color #eee8d5;

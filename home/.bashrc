@@ -31,4 +31,8 @@ alias ls="eza --hyperlink --icons"
 alias icat="kitten icat"
 
 TZ="Europe/Amsterdam"
-PS1="\n\[\033[35m\]\w \[\033[0m\] \n\033[36m\]\D{%H:%M} \[\033[31m\]\u@\h → \[\033[0m\]"
+COLOR1='\[\033[35m\]'
+COLOR2='\[\033[36m\]'
+COLOR3='\[\033[31m\]'
+COLRESET='\[\033[0m\]'
+PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h → ${COLRESET}"
