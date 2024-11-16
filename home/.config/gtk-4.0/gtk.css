@@ -1,5 +1,3 @@
-/* solarized dark colours - use with dark style selected */
-
 @define-color accent_color #586e75;
 @define-color accent_bg_color #1f444d;
 @define-color accent_fg_color #eee8d5;
@@ -21,7 +19,6 @@
 @define-color dialog_fg_color @popover_fg_color;
 
 @define-color view_bg_color #073642;
-efine-color view_bg_color #13161c;
 @define-color view_fg_color #eee8d5;
 
 @define-color card_bg_color #123a44;
