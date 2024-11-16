@@ -1,0 +1,65 @@
+/* Desktop */
+#overviewGroup {
+  background-color:#161e27;
+	/*background-image:url(/home/olivier/Pictures/2562640.jpg);*/
+	background-size:cover;
+}
+
+.dash-background,
+.overview-icon,
+.overview-tile,
+.calendar-day-heading,
+.calendar-day,
+.calendar-month-label,
+.calendar .calendar-month-header .pager-button {
+  background-color:transparent;
+}
+
+.app-folder,
+.workspace-thumbnail,
+.quick-toggle-menu,
+.search-entry,
+.overview-tile:hover, 
+.grid-search-result:hover, 
+.overview-tile:focus, 
+.grid-search-result:focus, 
+.overview-tile:selected, 
+.grid-search-result:selected,
+.events-button,
+.button,.icon-button,.message .message-header .message-expand-button,.message .message-header .message-close-button,.screenshot-ui-show-pointer-button,.login-dialog-button.cancel-button,.login-dialog-button.switch-user-button,.login-dialog-button.login-dialog-session-list-button {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dash-separator {
+  background-color:rgba(255,255,255,.3);
+}
+
+.show-apps {
+  width:64px;
+  height:64px;
+}
+  
+.app-folder-dialog {
+  background:#161e27;
+  box-shadow:none; 
+}
+
+.app-folder-dialog .page-navigation-arrow {
+  background-color:rgba(255,255,255,.1);
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.popup-menu-content {
+  background:#073642;
+  border:none;
+}
+
+#panelActivities {
+  background-color:black;
+}
+
+.calendar-today,
+.button:checked,.icon-button:checked,.message .message-header .message-expand-button:checked,.message .message-header .message-close-button:checked,.screenshot-ui-show-pointer-button:checked,.login-dialog-button.cancel-button:checked,.login-dialog-button.switch-user-button:checked,.login-dialog-button.login-dialog-session-list-button:checked {
+    background-color:-st-accent-color;
+}
