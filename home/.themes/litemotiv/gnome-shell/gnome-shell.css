@@ -56,8 +56,9 @@
 }
 
 #panelActivities {
-  background-color:black;
+  box-shadow:none;  
 }
+  
 
 .calendar-today,
 .button:checked,.icon-button:checked,.message .message-header .message-expand-button:checked,.message .message-header .message-close-button:checked,.screenshot-ui-show-pointer-button:checked,.login-dialog-button.cancel-button:checked,.login-dialog-button.switch-user-button:checked,.login-dialog-button.login-dialog-session-list-button:checked {

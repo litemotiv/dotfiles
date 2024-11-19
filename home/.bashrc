@@ -27,7 +27,7 @@ unset rc
 #alias ls="ls --color=auto --hyperlink=auto"
 alias la="ls -a"
 alias ll="ls -la"
-alias ls="eza --hyperlink --icons"
+alias ls="eza --hyperlink --group-directories-first --icons"
 alias icat="kitten icat"
 
 TZ="Europe/Amsterdam"
