@@ -35,60 +35,19 @@ Add repositories `rpmfusion-free` & `rpmfusion-free-updates`
 Test hardware acceleration for h264/h265 with `nvtop`
 
 ### 4) Extension manager
-
-- Disable workspace switcher overlay
-- Hide top bar 
-- Task widget
-- Tiling Shell
-- Vitals
-
-#### Optional
-- OpenWeather Refined
-- Blur my shell
-- Dash to dock
-- V-Shell (Vertical Workspaces)
-- No overview at start-up
+- Dash to Panel
+- Disable workspace switcher overlay 
 - User themes
+- Vitals
+- Workspace Indicator
+- 
+#### Optional
+- Color Picker
+- Hide top bar
+- OpenWeather Refined
+- Tiling Shell
 
-### 5) Apps Library
-| Name | Source |
-| --- | --- |
-| AmiBerry | Flathub |
-| Apostrophe | Flathub |
-| Calibre | RPM |
-| draw.io | Flathub |
-| EarTag | Flathub |
-| Extension Manager | Flathub |
-| Flameshot | RPM |
-| Flatseal | Flathub |
-| FreeFileSync | Flathub |
-| Gnome Tweaks | RPM |
-| kitty | RPM |
-| MusicBrainz Picard | RPM |
-| Nicotine+ | RPM |
-| Obsidian | Flathub |
-| qBittorrent | Flathub |
-| Raspberry Pi Imager | Flathub |
-| Switcheroo | Flathub |
-| Tauon | Flathub |
-| Ptyxis | RPM |
-| Vice | Flathub |
-| VLC | Flathub |
-| Zed | Flathub |
-| Zen Browser | Flathub |
-
-#### Console ####
-| Name | Source |
-| --- | --- |
-| eza | RPM |
-| htop | RPM |
-| ncmpc | RPM |
-| nvtop | RPM |
-| rpmreaper | RPM |
-| shntool | RPM |
-| vim-enhanced | RPM |
-
-### 6) Audio scripts
+### 5) Audio scripts
 
 Join separate FLAC files into single FLAC
 
