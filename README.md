@@ -40,7 +40,7 @@ Test hardware acceleration for h264/h265 with `nvtop`
 - User themes
 - Vitals
 - Workspace Indicator
-- 
+  
 #### Optional
 - Color Picker
 - Hide top bar
