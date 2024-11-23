@@ -52,6 +52,7 @@ Test hardware acceleration for h264/h265 with `nvtop`
 Requires User Themes extension 
 
 ~/.config/gtk-4.0/gtk.css
+
 ~/.themes/litemotiv/gnome-shell/gnome-shell.css
 
 ### 5) Audio scripts
