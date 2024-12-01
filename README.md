@@ -37,15 +37,23 @@ Test hardware acceleration for h264/h265 with `nvtop`
 ### 4) Extension manager
 - Dash to Panel
 - Disable workspace switcher overlay 
-- User themes
+- User Themes
 - Vitals
 - Workspace Indicator
-- 
+  
 #### Optional
 - Color Picker
 - Hide top bar
 - OpenWeather Refined
 - Tiling Shell
+
+### 6) UI theme tweaks
+
+Requires User Themes extension 
+
+~/.config/gtk-4.0/gtk.css
+
+~/.themes/litemotiv/gnome-shell/gnome-shell.css
 
 ### 5) Audio scripts
 
