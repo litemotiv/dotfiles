@@ -27,12 +27,20 @@ unset rc
 #alias ls="ls --color=auto --hyperlink=auto"
 alias la="ls -a"
 alias ll="ls -la"
-alias ls="eza --hyperlink --group-directories-first --icons"
 alias icat="kitten icat"
+
+if [ -x "$(command -v eza)" ]; then
+	alias ls="eza --hyperlink --group-directories-first --icons"
+fi
 
 TZ="Europe/Amsterdam"
 COLOR1='\[\033[35m\]'
 COLOR2='\[\033[36m\]'
 COLOR3='\[\033[31m\]'
 COLRESET='\[\033[0m\]'
-PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h → ${COLRESET}"
+
+if [ -n "$container" ]; then
+	COLOR3='\[\033[47m\]'
+fi
+
+PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h →${COLRESET} "
