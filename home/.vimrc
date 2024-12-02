@@ -2,6 +2,8 @@ set hidden										" allow multiple buffers to be opened
 set number										" show line numbers
 set cindent tabstop=4 shiftwidth=4				" keep indentation on new line
 filetype plugin indent on
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+autocmd FileType json setlocal tabstop=2 shiftwidth=2
 
 "set list
 set listchars=tab:▸·,trail:·					" Make tab characters and trailing spaces visible

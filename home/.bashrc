@@ -43,4 +43,6 @@ if [ -n "$container" ]; then
 	COLOR3='\[\033[47m\]'
 fi
 
+PROMPT_COMMAND='printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
+
 PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h →${COLRESET} "
