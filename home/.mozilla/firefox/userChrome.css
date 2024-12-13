@@ -30,6 +30,9 @@ Panel colors
   background: #111 !important;
 }
 
+#sidebar-main {
+  z-index: 999;
+}
 /*
 Default panel borders
 */
@@ -81,31 +84,59 @@ Tab groups
 */
 tab-group[collapsed=""] {
   display:block !important;
-  height:25px;
-  margin: 0 auto;
-  width: 100% !important;
+  max-height:30px;
   overflow: hidden !important;
 }
 
 .tab-group-label {
-  border-radius: 3px !important;
-  max-width: 50px !important; 
+  display: block !important;
+  border-radius: 0px !important;
   margin: 0 auto;
-  overflow: hidden !important;
-  font-size:12px !important ;
-  line-height: 2em !important;
+  font:700 11px/25px 'JetBrains Mono',sans-serif !important;
+  max-width:57px;
+  background:var(--tab-group-color) !important;
+  border-left:1px solid var(--tab-group-color) !important;
 }
 
   tab-group[collapsed=""] .tab-group-label {
     border:none !important; 
-
+    border-left:1px solid var(--tab-group-color) !important;
+    background:#fff2 !important;
   }
 
-tab-group .tab-stack {
-  background-color: #fff0 !important;
+  /* 
+  .tab-group-label:after {
+    content:" ↓";
+  }
+
+    tab-group[collapsed=""] .tab-group-label:after {
+        content:" ↑";
+      }
+   */
+
+tab-group tab {
+  background-color: #fff1 !important;  
 }
 
-
-.tab-group-label-container:after {
-  opacity: 0;
+tab-group tab:before {
+  content:"";
+  width:1px;
+  height:100%;
+  background:var(--tab-group-color);
+  position:absolute;
 }
+
+  tab-group + tab {
+    margin-top:5px !important;
+  }
+
+.tab-group-label-container {
+  margin-inline-start: 0px !important;
+  padding-inline-end: 0px !important;
+  margin-top: 5px;
+}
+
+  .tab-group-line,
+  .tab-group-label-container:after {
+    opacity:0;
+  }
