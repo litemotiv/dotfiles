@@ -10,7 +10,7 @@ Hide 'Extension' text in the address bar
 }
 
 /*
-Custom new-tab icon
+Custom new-tab page favicon
 */
 tab[label="New Tab"] .tab-content {
   background: url(file:///home/olivier/.dotfiles/home/.var/app/io.github.zen_browser.zen/new-tab.svg) no-repeat center !important;
@@ -28,29 +28,33 @@ Panel colors
 #navigator-toolbox,
 #sidebar-main {
   background: #111 !important;
-  border:none !important;
-}
-
-#sidebar-main {
-
 }
 
 /*
-Panel borders
+Default panel borders
 */
 :root {
   --chrome-content-separator-color: none !important;
 }
 
 /*
-Hide icons 
+Active tab indicator
+*/
+.tab-background {
+  &:is([selected], [multiselected]) {
+    background-color:rgba(255,255,255,.1) !important;
+  }
+}
+
+/*
+Hide default icons 
 */
 #tracking-protection-icon-container {
   display: none !important;
 }
 
 /*
-Show/hide tab panel
+Show/hide tab panel icon
 */
 #sidebar-button { 
   margin-left: 5px !important;
@@ -64,4 +68,44 @@ Rounded content border
   outline: 5px solid #111 !important;
   border-top:1px solid #333 !important;
   border-left:1px solid #333 !important;
+}
+
+  :root[sizemode="fullscreen"] .browserStack > browser {
+    border-radius: 0 !important;
+    border:none !important;
+    outline:none !important;
+  }
+
+/*
+Tab groups
+*/
+tab-group[collapsed=""] {
+  display:block !important;
+  height:25px;
+  margin: 0 auto;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.tab-group-label {
+  border-radius: 3px !important;
+  max-width: 50px !important; 
+  margin: 0 auto;
+  overflow: hidden !important;
+  font-size:12px !important ;
+  line-height: 2em !important;
+}
+
+  tab-group[collapsed=""] .tab-group-label {
+    border:none !important; 
+
+  }
+
+tab-group .tab-stack {
+  background-color: #fff0 !important;
+}
+
+
+.tab-group-label-container:after {
+  opacity: 0;
 }
