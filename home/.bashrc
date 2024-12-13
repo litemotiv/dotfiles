@@ -43,6 +43,10 @@ PROMPT_COMMAND='printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
 if [ -n "$container" ]; then
 	COLOR3='\[\033[0;37m\]'
 	PROMPT_COMMAND='printf "\033]0;%s %s\007" "${PWD/#$HOME/\~} """'
+
+	if [ -n "$CONTAINER_ID" ]; then
+		LABEL=" [${CONTAINER_ID}]"
+	fi
 fi
 
-PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h →${COLRESET} "
+PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h${LABEL} →${COLRESET} "

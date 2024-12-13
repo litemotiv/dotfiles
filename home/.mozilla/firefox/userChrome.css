@@ -1,0 +1,67 @@
+/*
+Hide 'Extension' text in the address bar
+*/
+#identity-box.extensionPage #identity-icon-label {
+  visibility: collapse;
+}
+
+#identity-box.extensionPage:hover #identity-icon-label {
+  visibility: visible;
+}
+
+/*
+Custom new-tab icon
+*/
+tab[label="New Tab"] .tab-content {
+  background: url(file:///home/olivier/.dotfiles/home/.var/app/io.github.zen_browser.zen/new-tab.svg) no-repeat center !important;
+  filter: invert(.6);
+  background-size:20px !important;
+}
+
+tab[label="New Tab"] .tab-icon-stack {
+  opacity:0;
+}
+
+/*
+Panel colors
+*/
+#navigator-toolbox,
+#sidebar-main {
+  background: #111 !important;
+  border:none !important;
+}
+
+#sidebar-main {
+
+}
+
+/*
+Panel borders
+*/
+:root {
+  --chrome-content-separator-color: none !important;
+}
+
+/*
+Hide icons 
+*/
+#tracking-protection-icon-container {
+  display: none !important;
+}
+
+/*
+Show/hide tab panel
+*/
+#sidebar-button { 
+  margin-left: 5px !important;
+}
+
+/*
+Rounded content border
+*/
+.browserStack > browser {
+  border-radius: 15px 0 0 0 !important;
+  outline: 5px solid #111 !important;
+  border-top:1px solid #333 !important;
+  border-left:1px solid #333 !important;
+}

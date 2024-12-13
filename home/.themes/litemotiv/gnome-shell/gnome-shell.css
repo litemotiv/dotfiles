@@ -30,6 +30,10 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.message {
+  background-color:#1e4851;
+}
+  
 .dash-separator {
   background-color:rgba(255,255,255,.3);
 }
@@ -63,11 +67,13 @@
 }
 
 .osd-window .level {
-   -barlevel-active-background-color:#000000;
+  -barlevel-background-color:rgba(0,0,0,0.05);
+  -barlevel-active-background-color:rgba(0,0,0,0.75);
 }
 
 .calendar-today,
 .button:checked,.icon-button:checked,.message .message-header .message-expand-button:checked,.message .message-header .message-close-button:checked,.screenshot-ui-show-pointer-button:checked,.login-dialog-button.cancel-button:checked,.login-dialog-button.switch-user-button:checked,.login-dialog-button.login-dialog-session-list-button:checked {
     background-color:-st-accent-color;
 }
+
 
