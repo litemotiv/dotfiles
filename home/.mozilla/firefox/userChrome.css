@@ -27,7 +27,7 @@ tab[label="New Tab"] .tab-icon-image {
 }
 
 .tab-label {
-  height:21px !important;
+  line-height: 1 !important;
 }
 
 /*
@@ -100,31 +100,17 @@ tab-group[collapsed=""] {
 
 .tab-group-label {
   display: block !important;
-  border-radius: 5px 0 0 0 !important;
+  border-radius: 5px !important;
   margin: 0 auto;
   font:700 11px/25px 'JetBrains Mono',sans-serif !important;
-  max-width:57px;
   background:var(--tab-group-color) !important;
-  border-left:1px solid var(--tab-group-color) !important;
+  max-width:initial !important;
 }
 
   tab-group[collapsed=""] .tab-group-label {
     border:none !important; 
-    border-left:1px solid var(--tab-group-color) !important;
     background:#fff2 !important;
   }
-
-tab-group tab {
-  background-color: #fff1 !important;  
-}
-
-tab-group tab:before {
-  content:"";
-  width:1px;
-  height:100%;
-  background:var(--tab-group-color);
-  position:absolute;
-}
 
   tab-group + tab {
     margin-top:5px !important;
@@ -136,7 +122,6 @@ tab-group tab:before {
   margin-top: 5px;
 }
 
-  .tab-group-line,
   .tab-group-label-container:after {
-    opacity:0;
+    opacity:0; 
   }
