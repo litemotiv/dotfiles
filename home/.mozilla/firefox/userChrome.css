@@ -125,3 +125,30 @@ tab-group[collapsed=""] {
   .tab-group-label-container:after {
     opacity:0; 
   }
+
+/*
+sidebar
+*/
+#sidebar-box {
+  padding:0 !important;
+}
+
+#sidebar {
+
+  border:none !important;
+  background:#1c1b22 !important;
+}
+
+  .sidebar-splitter {
+ 
+  }
+
+.fxview-tab-list,
+.sidebar-placesTreechildren {
+  color:#ddd;
+}
+
+moz-card {
+  border:none !important;
+  background-color: #fff1 !important;
+}
