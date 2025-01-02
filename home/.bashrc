@@ -47,7 +47,7 @@ if [ -n "$container" ]; then
 	ICON='⏣ '
 
 	if [ -n "$CONTAINER_ID" ]; then
-		LABEL=" [${CONTAINER_ID}]"
+		LABEL=" ${ICON}${CONTAINER_ID}"
 	fi
 fi
 
