@@ -11,6 +11,9 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
+export EDITOR=/usr/bin/vim
+RANGER_LOAD_DEFAULT_RC=false
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -38,15 +41,15 @@ COLOR1='\[\033[35m\]'
 COLOR2='\[\033[36m\]'
 COLOR3='\[\033[31m\]'
 COLRESET='\[\033[0m\]'
-PROMPT_COMMAND='printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
 
 if [ -n "$container" ]; then
 	COLOR3='\[\033[0;37m\]'
-	PROMPT_COMMAND='printf "\033]0;%s %s\007" "${PWD/#$HOME/\~} """'
+	ICON='⏣ '
 
 	if [ -n "$CONTAINER_ID" ]; then
 		LABEL=" [${CONTAINER_ID}]"
 	fi
 fi
 
+PROMPT_COMMAND='printf "\033]0;${ICON}%s\007" "${PWD/#$HOME/\~}"'
 PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h${LABEL} →${COLRESET} "

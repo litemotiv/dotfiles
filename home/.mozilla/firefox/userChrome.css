@@ -38,6 +38,14 @@ Panel colors
   background: #0f0f0f !important;
 }
 
+toolbarbutton,
+.button-background img,
+.urlbar-icon,
+#identity-box,
+#notification-popup-box {
+  fill: #bbb !important;
+}
+
 #sidebar-main {
   z-index: 999;
 }
@@ -52,6 +60,8 @@ Default panel borders
 Active tab indicator
 */
 .tab-background {
+  margin-inline:8px !important;
+  
   &:is([selected], [multiselected]) {
     background-color:rgba(255,255,255,.1) !important;
   }
@@ -61,11 +71,28 @@ Active tab indicator
 Panel placement
 */
 .titlebar-spacer[type="post-tabs"] {
-  width: 0px;
+  width: 0px !important;;
 }
 
 #PanelUI-menu-button {
   padding-inline-end:inherit !important;
+}
+
+/*
+Sidebar width
+*/
+.actions-list {
+  & > moz-button:not(.tools-overflow) {
+    --button-outer-padding-inline: 8px !important;
+ }
+}
+
+#tabbrowser-tabs[orient="vertical"] {
+  --tab-inline-padding:16px !important;
+}
+
+#tabs-newtab-button {
+  margin-inline:8px !important;
 }
 
 /*
@@ -79,8 +106,27 @@ Hide default icons
 Show/hide tab panel icon
 */
 #sidebar-button { 
-  margin-left: 5px !important;
+  padding-left:8px !important;;
+  /*! margin-left: 5px !important; */
 }
+
+/*
+New tab [+] icon divider
+*/
+#tabs-newtab-button {
+  position: relative;
+  top:11px;
+}
+
+  #tabs-newtab-button:before {
+    content:"";
+    display: block;
+    position: absolute;
+    height:1px;
+    width:100%;
+    top:-5px;
+    background:#fff2;
+  }
 
 /*
 Rounded content border
@@ -145,14 +191,9 @@ sidebar
 }
 
 #sidebar {
-
   border:none !important;
   background:#1c1b22 !important;
 }
-
-  .sidebar-splitter {
- 
-  }
 
 .fxview-tab-list,
 .sidebar-placesTreechildren {

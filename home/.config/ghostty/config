@@ -1,0 +1,10 @@
+font-size = 13
+theme = GitHub Dark
+window-theme = ghostty
+window-width = 131
+window-height = 35
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+gtk-wide-tabs = false
