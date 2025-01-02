@@ -36,6 +36,7 @@ Test hardware acceleration for h264/h265 with `nvtop`
 
 ### 4) Extension manager
 - Dash to Panel
+- Disable Workspace Animation
 - Disable workspace switcher overlay
 - Rounded Window Corners Reborn
 - User Themes
