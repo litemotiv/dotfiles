@@ -157,11 +157,12 @@ tab-group[collapsed=""] {
 
 .tab-group-label {
   display: block !important;
-  border-radius: 5px !important;
+  border-radius: 4px !important;
   margin: 0 auto;
-  font:700 11px/25px 'JetBrains Mono',sans-serif !important;
+  font:700 12px/25px 'JetBrains Mono',sans-serif !important;
   background:var(--tab-group-color) !important;
   max-width:initial !important;
+  color:#eee !important;
 }
 
   tab-group[collapsed=""] .tab-group-label {

@@ -5,6 +5,12 @@ window-width = 131
 window-height = 35
 window-decoration = false
 window-padding-x = 10
-window-padding-y = 10
+window-padding-y = 6 
 window-padding-balance = true
 gtk-wide-tabs = false
+adw-toolbar-style = raised
+keybind = alt+zero=unbind
+keybind = alt+one=unbind
+keybind = alt+two=unbind
+keybind = alt+three=unbind
+keybind = alt+four=unbind
