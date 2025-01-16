@@ -152,6 +152,7 @@ Tab groups
 tab-group[collapsed=""] {
   display:block !important;
   max-height:30px;
+
   overflow: hidden !important;
 }
 
@@ -163,11 +164,16 @@ tab-group[collapsed=""] {
   background:var(--tab-group-color) !important;
   max-width:initial !important;
   color:#eee !important;
+  max-width:46px !important;
 }
+
+  tabs[expanded=""] .tab-group-label {
+    max-width:initial !important;
+  }
 
   tab-group[collapsed=""] .tab-group-label {
     border:none !important; 
-    background:#fff2 !important;
+    background:#fff2 !important;    
   }
 
   tab-group + tab {
