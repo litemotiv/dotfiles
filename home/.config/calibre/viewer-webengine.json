@@ -1,0 +1,82 @@
+{
+  "geometry-of-main_window_geometry": {
+    "frame_geometry": {
+      "height": 1188,
+      "width": 1302,
+      "x": -11,
+      "y": -49
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1128,
+      "width": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1128,
+      "width": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAD////1////zwAABQoAAARyAAAAAAAAAAAAAAT/AAAEZwAAAAAAAAAADwAAAAAAAAAAAAAABP8AAARn"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 2.0,
+      "geometry_in_logical_pixels": {
+        "height": 2400,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "SDC",
+      "model": "0x416b",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 2400,
+        "width": 3840
+      },
+      "virtual_geometry": {
+        "height": 2400,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACDAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPIA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANcA////AAAFAAAABGgAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "controls_help_shown_count": 2,
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "remember_last_read": true,
+      "remember_window_geometry": false,
+      "save_annotations_in_ebook": true,
+      "singleinstance": false
+    },
+    "standalone_recently_opened": [
+      {
+        "key": "/home/olivier/.var/app/io.github.zen_browser.zen/.zen/dzz1kdht.Default (alpha)/chrome/zen-themes/c5f7fb68-cc75-4df0-8b02-dc9ee13aa773/readme.md",
+        "pathtoebook": "/home/olivier/.var/app/io.github.zen_browser.zen/.zen/dzz1kdht.Default (alpha)/chrome/zen-themes/c5f7fb68-cc75-4df0-8b02-dc9ee13aa773/readme.md",
+        "timestamp": "2024-09-18T13:06:22.789Z",
+        "title": "readme"
+      },
+      {
+        "key": "/home/olivier/.var/app/io.github.zen_browser.zen/.zen/dzz1kdht.Default (alpha)/chrome/zen-themes/053a3ffa-9233-4554-88f3-076e6a6ebb43/readme.md",
+        "pathtoebook": "/home/olivier/.var/app/io.github.zen_browser.zen/.zen/dzz1kdht.Default (alpha)/chrome/zen-themes/053a3ffa-9233-4554-88f3-076e6a6ebb43/readme.md",
+        "timestamp": "2024-09-17T20:31:09.175Z",
+        "title": "readme"
+      }
+    ]
+  }
+}

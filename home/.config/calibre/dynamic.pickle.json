@@ -1,0 +1,23 @@
+{
+  "catalogs_to_be_synced": {
+    "__class__": "set",
+    "__value__": []
+  },
+  "database location dialog": "/home/olivier/Documents/Calibre Library",
+  "sort_history": [
+    [
+      "series",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "kobo",
+  "welcome_wizard_was_run": true
+}
