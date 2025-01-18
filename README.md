@@ -66,3 +66,7 @@ Join separate FLAC files into single FLAC
 Embed CUE file into flac
 
 `# metaflac --import-cuesheet-from="album.cue" --set-tag-from-file="CUESHEET=album.cue" "album.flac"`
+
+### 6 Sudo asterisks
+visudo
+`Defaults env_reset,pwfeedback`
