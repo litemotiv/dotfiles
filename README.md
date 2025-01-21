@@ -24,6 +24,20 @@ Create /mnt/readyshare/
 
 `# systemctl enable mnt-readyshare.automount`
 
+#### 2.1) Rsync backup
+
+`# rsync -i -u -n -r --delete /mnt/readyshare/[src]/ /run/media/[user]/[drive]/[dest]`
+
+**Note**: trailing slash after src directory
+
+```
+-i        Output a change-summary for all updates
+-u        Skip files that are newer on the receiver
+-n        Dry-run
+-r        Recurse into directories
+--delete  Delete extraneous files from dest dirs
+```
+
 ### 3) Codecs (minimal)
 
 https://rpmfusion.org/Configuration
