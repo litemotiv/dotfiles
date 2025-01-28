@@ -81,6 +81,10 @@ Embed CUE file into flac
 
 `# metaflac --import-cuesheet-from="album.cue" --set-tag-from-file="CUESHEET=album.cue" "album.flac"`
 
+Remove CUE file from flac
+
+`# metaflac --remove-all-tags album.flac`
+
 ### 6 Sudo asterisks
 visudo
 `Defaults env_reset,pwfeedback`
