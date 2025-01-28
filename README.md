@@ -26,7 +26,7 @@ Create /mnt/readyshare/
 
 #### 2.1) Rsync backup
 
-`# rsync -i -u -n -r --delete /mnt/readyshare/[src]/ /run/media/[user]/[drive]/[dest]`
+`# rsync -i -u -n -r --delete --stats /mnt/readyshare/[src]/ /run/media/[user]/[drive]/[dest]`
 
 **Note**: trailing slash after src directory
 
@@ -36,6 +36,7 @@ Create /mnt/readyshare/
 -n        Dry-run
 -r        Recurse into directories
 --delete  Delete extraneous files from dest dirs
+--stats   Give some file-transfer stats
 ```
 
 ### 3) Codecs (minimal)
