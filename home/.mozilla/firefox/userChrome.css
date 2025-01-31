@@ -13,7 +13,7 @@ Hide 'Extension' text in the address bar
 Custom new-tab page favicon
 */
 tab[label="New Tab"] .tab-icon-stack {
-  background: url(file:///home/olivier/.mozilla/firefox/meutjbmi.default-release/chrome/new-tab.svg) no-repeat left bottom !important;
+  background: url(file:///home/olivier/.mozilla/firefox/7x4ye1s9.default-release/chrome/new-tab.svg) no-repeat left bottom !important;
   filter: invert(.6);
   background-size:16px !important;
 }

@@ -31,3 +31,4 @@ let g:buftabline_numbers=1
 let g:buftabline_indicators=1
 let g:buftabline_separators=0
 
+let g:netrw_home = '/home/olivier/.cache/vim'	" location of netrw history file
