@@ -140,7 +140,7 @@ Rounded content border
   */
 }
 
-  :root[sizemode="fullscreen"] .browserStack > browser {
+  :root[inDOMFullscreen="true"] .browserStack > browser {
     border-radius: 0 !important;
     border:none !important;
     outline:none !important;

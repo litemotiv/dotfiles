@@ -1,5 +1,6 @@
 font-size = 11
 theme = GitHub Dark
+background-opacity = 0.975
 window-theme = ghostty
 window-width = 131
 window-height = 35

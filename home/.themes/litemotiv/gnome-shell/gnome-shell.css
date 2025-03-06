@@ -43,7 +43,7 @@
 }
 
 .app-folder-dialog .page-navigation-arrow {
-  background-color:rgba(255,255,255,.1);
+  background-color:rgba(0,0,0,.1);
   margin-left:20px;
   margin-right:20px;
 }
@@ -74,5 +74,4 @@
 .button:checked,.icon-button:checked,.message .message-header .message-expand-button:checked,.message .message-header .message-close-button:checked,.screenshot-ui-show-pointer-button:checked,.login-dialog-button.cancel-button:checked,.login-dialog-button.switch-user-button:checked,.login-dialog-button.login-dialog-session-list-button:checked {
     background-color:-st-accent-color;
 }
-
 
