@@ -22,14 +22,6 @@ tab[label="New Tab"] .tab-icon-image {
   opacity:0;
 }
 
-.tab-content {
-  background:none !important;
-}
-
-.tab-label {
-  line-height: 1 !important;
-}
-
 /*
 Panel colors
 */
@@ -46,11 +38,13 @@ toolbarbutton,
   fill: #bbb !important;
 }
 
-#sidebar-main {
-  z-index: 999;
+.titlebar-close {
+  opacity: .8;
 }
+
 /*
-Default panel borders
+Default panel borders 
+(see tiny dot top-left)
 */
 :root {
   --chrome-content-separator-color: none !important;
@@ -68,27 +62,10 @@ Active tab indicator
 }
 
 /*
-Panel placement
+Panel alignment
 */
-.titlebar-spacer[type="post-tabs"] {
-  width: 0px !important;;
-}
-
 #PanelUI-menu-button {
   padding-inline-end:inherit !important;
-}
-
-/*
-Sidebar width
-*/
-.actions-list {
-  & > moz-button:not(.tools-overflow) {
-    --button-outer-padding-inline: 8px !important;
- }
-}
-
-#tabbrowser-tabs[orient="vertical"] {
-  --tab-inline-padding:16px !important;
 }
 
 #tabs-newtab-button {
@@ -100,14 +77,6 @@ Hide default icons
 */
 #tracking-protection-icon-container {
   display: none !important;
-}
-
-/*
-Show/hide tab panel icon
-*/
-#sidebar-button { 
-  padding-left:8px !important;;
-  /*! margin-left: 5px !important; */
 }
 
 /*
@@ -134,60 +103,12 @@ Rounded content border
 .browserStack > browser {
   border-radius: 15px;
   outline: 6px solid #0f0f0f !important;
-  /*
-  border-top:1px solid #222 !important;
-  border-left:1px solid #222 !important;
-  */
 }
 
   :root[inDOMFullscreen="true"] .browserStack > browser {
     border-radius: 0 !important;
     border:none !important;
     outline:none !important;
-  }
-
-/*
-Tab groups
-*/
-tab-group[collapsed=""] {
-  display:block !important;
-  max-height:30px;
-
-  overflow: hidden !important;
-}
-
-.tab-group-label {
-  display: block !important;
-  border-radius: 4px !important;
-  margin: 0 auto;
-  font:700 12px/25px 'JetBrains Mono',sans-serif !important;
-  background:var(--tab-group-color) !important;
-  max-width:initial !important;
-  color:#eee !important;
-  max-width:46px !important;
-}
-
-  tabs[expanded=""] .tab-group-label {
-    max-width:initial !important;
-  }
-
-  tab-group[collapsed=""] .tab-group-label {
-    border:none !important; 
-    background:#fff2 !important;    
-  }
-
-  tab-group + tab {
-    margin-top:5px !important;
-  }
-
-.tab-group-label-container {
-  margin-inline-start: 0px !important;
-  padding-inline-end: 0px !important;
-  margin-top: 5px;
-}
-
-  .tab-group-label-container:after {
-    opacity:0; 
   }
 
 /*
@@ -202,6 +123,7 @@ sidebar
   background:#1c1b22 !important;
 }
 
+.tab-icon-stack,
 .fxview-tab-list,
 .sidebar-placesTreechildren {
   color:#ddd;
@@ -210,4 +132,17 @@ sidebar
 moz-card {
   border:none !important;
   background-color: #fff1 !important;
+}
+
+/*
+Sidebar width
+*/
+.actions-list {
+  & > moz-button:not(.tools-overflow) {
+    --button-outer-padding-inline: 8px !important;
+ }
+}
+
+#tabbrowser-tabs[orient="vertical"] {
+  --tab-inline-padding:16px !important;
 }
