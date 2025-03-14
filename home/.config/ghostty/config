@@ -8,7 +8,7 @@ window-decoration = auto
 window-padding-x = 10
 window-padding-y = 6 
 window-padding-balance = true
-gtk-titlebar=false
+gtk-titlebar = false
 gtk-wide-tabs = false
 adw-toolbar-style = raised
 keybind = alt+zero=unbind

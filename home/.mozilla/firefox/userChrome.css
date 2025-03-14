@@ -10,6 +10,14 @@ Hide 'Extension' text in the address bar
 }
 
 /*
+Hide close icon on tabs
+*/
+
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button {
+  display:none!important
+}
+
+/*
 Custom new-tab page favicon
 */
 tab[label="New Tab"] .tab-icon-stack {
