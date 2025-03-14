@@ -1,2 +1,2 @@
-timeout 30 'brightnessctl -qs set 10%' resume 'brightnessctl -qr'
-timeout 60 'brightnessctl -q set 0%' 
+timeout 60 'brightnessctl -qs set 10%' resume 'brightnessctl -qr'
+timeout 180 'brightnessctl -q set 0%' 
