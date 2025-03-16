@@ -91,12 +91,20 @@
   width:0px;
 }
   
+.events-button,
 .message {
    background-color:st-lighten(#073642, 3%);
 }
- 
+
+.message-list-controls,
+.message-header {
+  color:rgba(255,255,255,.5);
+}
+  
+.message-content,
+.events-title,
 .datemenu-today-button {
-  color:#eee;
+  color:rgba(255,255,255,.8);
 }
   
 .calendar-today,
