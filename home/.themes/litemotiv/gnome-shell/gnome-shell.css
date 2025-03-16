@@ -1,4 +1,5 @@
 #overviewGroup,
+.workspace-animation,
 .app-folder-dialog {
   background:#161e27;
   box-shadow:none; 
@@ -29,9 +30,17 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message {
+.screenshot-ui-type-button {
   background-color:#1e4851;
 }
+
+  .screenshot-ui-type-button:hover {
+    background-color:st-lighten(#1e4851, 5%);
+  }
+
+  .screenshot-ui-type-button:checked {
+    background-color:st-lighten(#1e4851, 7%);
+  }
   
 .dash-separator {
   background-color:rgba(255,255,255,.3);
@@ -48,6 +57,9 @@
   margin-right:20px;
 }
 
+.screenshot-ui-panel,
+.switcher-list,
+.modal-dialog,
 .popup-menu-content {
   background:#073642;
   border:none;
@@ -57,19 +69,36 @@
 .panel-button,
 .clock {
   /* background:#161e27; */
-  background:rgba(255,255,255,.8);
-  color:#000;
+  background:rgba(0,0,0,.2);
+  color:rgba(255,255,255,.75);
   border-radius:10px;
   box-shadow:inset 0 0 0 0 rgba(0,0,0,0);
   font-family:"JetBrains Mono",sans-serif;
   font-weight:500;
 }
 
-.osd-window .level {
-  -barlevel-background-color:rgba(0,0,0,0.05);
-  -barlevel-active-background-color:rgba(0,0,0,0.75);
+.osd-window {
+  background:#073642;
 }
 
+.osd-window .level {
+  -barlevel-background-color:rgba(255,255,255,0.05);
+  -barlevel-active-background-color:rgba(255,255,255,0.5);
+}
+
+/* dnd icon */
+.clock-display-box :last-child {
+  width:0px;
+}
+  
+.message {
+   background-color:st-lighten(#073642, 3%);
+}
+ 
+.datemenu-today-button {
+  color:#eee;
+}
+  
 .calendar-today,
 .button:checked,.icon-button:checked,.message .message-header .message-expand-button:checked,.message .message-header .message-close-button:checked,.screenshot-ui-show-pointer-button:checked,.login-dialog-button.cancel-button:checked,.login-dialog-button.switch-user-button:checked,.login-dialog-button.login-dialog-session-list-button:checked {
     background-color:-st-accent-color;

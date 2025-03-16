@@ -1,5 +1,6 @@
 // -*- mode: jsonc -*-
 {
+	"height": 30,
     "spacing": 4, 
     "modules-left": [
         "hyprland/workspaces",
@@ -10,11 +11,11 @@
     ],
     "modules-right": [
         "pulseaudio",
+		"backlight",
         "network",
         "load",
         "temperature",
         "battery",
-		"backlight",
         "tray"
     ],
      "hyprland/workspaces": {

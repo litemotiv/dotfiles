@@ -14,6 +14,9 @@ export PATH
 export EDITOR=/usr/bin/vim
 RANGER_LOAD_DEFAULT_RC=false
 
+# save history from multiple terminal sessions
+export PROMPT_COMMAND='history -a'
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 

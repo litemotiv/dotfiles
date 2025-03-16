@@ -4,10 +4,12 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    color: #dddddd;
+    background-color:#0f0f0f;
+    color: #aaaaaa;
+	border-bottom:1px solid #555555;
     transition-property: background-color;
     transition-duration: .5s;
+	padding:10px;
 }
 
 window#waybar.hidden {
@@ -34,8 +36,7 @@ window#waybar.chromium {
 
 .module {
 	border-radius:5px;
-	background-color:rgba(0,0,0,.5);
-	color:rgba(255,255,255,.8);
+	/*background-color:rgba(0,0,0,.5);*/
     padding: 0 10px;
 }
 button {
@@ -44,7 +45,7 @@ button {
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
-	color:rgba(255,255,255,.8);
+	color:#aaaaaa;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -111,6 +112,7 @@ label:focus {
 
 #network.disconnected {
     background-color: #f53c3c;
+	color:#eeeeee;
 }
 
 #pulseaudio {
