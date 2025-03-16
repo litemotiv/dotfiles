@@ -9,16 +9,11 @@ fi
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
-export PATH
 
+export PATH
+export HISTCONTROL=ignoreboth:erasedups
 export EDITOR=/usr/bin/vim
 RANGER_LOAD_DEFAULT_RC=false
-
-# save history from multiple terminal sessions
-export PROMPT_COMMAND='history -a'
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
@@ -54,5 +49,9 @@ if [ -n "$container" ]; then
 	fi
 fi
 
-PROMPT_COMMAND='printf "\033]0;${ICON}%s\007" "${PWD/#$HOME/\~}"'
+shopt -s autocd
+
+# save history from multiple terminal sessions and print directory line before prompt
+PROMPT_COMMAND='history -a; history -c; history -r; printf "\033]0;${ICON}%s\007" "${PWD/#$HOME/\~}"'
+
 PS1="\n${COLOR1}\w \n${COLOR2}\D{%H:%M} ${COLOR3}\u@\h${LABEL} →${COLRESET} "
