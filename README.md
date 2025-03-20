@@ -47,7 +47,12 @@ https://rpmfusion.org/Howto/Multimedia
 
 Add repositories `rpmfusion-free` & `rpmfusion-free-updates`
 
-Test hardware acceleration for h264/h265 with `nvtop`
+```
+# sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+# sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+# sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+# sudo dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
+```
 
 ### 4) Extension manager
 - Dash to Panel
