@@ -60,7 +60,7 @@
     },
 	"load": {
 		"interval": 10,
-		"format": "{load1}",
+		"format": "{load1} ",
 		"max-length": 10
 	},
     "temperature": {

@@ -1,0 +1,17 @@
+[general]
+fullscreen = true
+early-exit = true
+
+corner-roundness = 0
+initial-tool = "arrow"
+
+#annotation-size-factor = 2
+
+output-filename = "/home/olivier/Pictures/Screenshots/%Y-%m-%d_%H:%M:%S.png"
+
+#action-on-enter = "save-to-clipboard"
+#save-after-copy = false
+
+#primary-highlighter = "block"
+
+disable-notifications = true
