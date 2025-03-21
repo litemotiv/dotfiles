@@ -1,0 +1,30 @@
+window {
+	margin: 7px;
+	border-radius:10px;
+	background-color: rgba(0,0,0,.9);
+}
+
+#input {
+	background-color:#222222;
+	color:#dddddd;
+	border-radius:5px;
+	margin-bottom:7px;
+}
+
+#entry {
+	border-radius:5px;
+	color:#dddddd;
+	margin-bottom:3px;
+}
+
+#entry:selected {
+	outline:none;
+}
+
+#outer-box {
+	margin:10px;
+}
+
+#text {
+	margin: 3px;
+}
