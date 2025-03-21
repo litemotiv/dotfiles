@@ -94,3 +94,7 @@ Remove CUE file from flac
 ### 6 Sudo asterisks
 visudo
 `Defaults env_reset,pwfeedback`
+
+### 7 EU keyboard layout
+
+![EU keyboard layout](https://blog.getreu.net/20201002-international-EurKEY-US-keyboard-layout-Debian/layout.png)
