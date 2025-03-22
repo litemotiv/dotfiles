@@ -8,6 +8,7 @@ initial-tool = "arrow"
 #annotation-size-factor = 2
 
 output-filename = "/home/olivier/Pictures/Screenshots/%Y-%m-%d_%H:%M:%S.png"
+copy-command = "wl-copy"
 
 #action-on-enter = "save-to-clipboard"
 #save-after-copy = false
