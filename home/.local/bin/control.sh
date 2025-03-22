@@ -26,10 +26,10 @@ eval set -- ${args}
   case $1 in
     -v | --volume) 		
 		volume=$2; 
-		wpctl set-volume @DEFAULT_AUDIO_SINK@ $volume
+		wpctl set-volume @DEFAULT_AUDIO_SINK@ $volume -l 1.0
 		current=`wpctl get-volume @DEFAULT_AUDIO_SINK@`
-		arr=( ${current//[!0-9]/ } )
-		dunstify -t 3000 -h string:x-dunst-stack-tag:progress "Volume: ${arr[1]}%" -h int:value:"${arr[1]}"
+		new=`bc <<< "scale=0; ${current:8:5} * 100"`
+		dunstify -t 3000 -h string:x-dunst-stack-tag:progress "Volume: $new%" -h int:value:"$new"
 		shift 2 
 		;;
     -b | --brightness)  
