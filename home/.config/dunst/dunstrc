@@ -1,20 +1,15 @@
 # See dunst(5) for all configuration options
 
 [global]
-### Display ###
-
-# Which monitor should the notifications be displayed on.
 monitor = 0
 
 width = 300
 height = (0, 300)
-origin = top-right
+origin = top-center
 offset = (10, 10)
 
-# Maximum number of notification (0 means no limit)
 notification_limit = 10
 
-### Progress bar ###
 progress_bar = true
 progress_bar_height = 20
 progress_bar_frame_width = 1
@@ -48,7 +43,7 @@ text_icon_padding = 0
 
 frame_width = 2
 
-frame_color = "#222222"
+frame_color = "#333333ee"
 
 gap_size = 5
 
@@ -246,9 +241,9 @@ timeout = 10
 default_icon = dialog-information
 
 [urgency_normal]
-background = "#101010"
+background = "#101010ee"
 foreground = "#999999"
-highlight = "#999999"
+highlight = "#aaaaaaee"
 timeout = 10
 override_pause_level = 30
 # Icon for notifications with normal urgency
