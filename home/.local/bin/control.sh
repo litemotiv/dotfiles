@@ -37,7 +37,7 @@ eval set -- ${args}
 		brightnessctl s $brightness
 		current=`brightnessctl g`
 		perc=$(( 100*$current/255 ))
-		dunstify -t 3000 -h string:x-dunst-stack-tag:progress "Brightness: $perc%" -h int:value:"$perc"
+		dunstify -t 3000 -h string:x-dunst-stack-tag:display "Brightness: $perc%" -h int:value:"$perc"
 		shift 2 
 		;;
     -h | --help)    	
