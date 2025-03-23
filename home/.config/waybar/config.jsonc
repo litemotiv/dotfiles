@@ -55,7 +55,8 @@
     },
 	"backlight": {
 		"format": "{percent}% {icon}",
-		"format-icons": [""]
+		"format-icons": [""],
+		"tooltip": false
 	},
     "tray": {
         "spacing": 10
@@ -73,7 +74,8 @@
         "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""],
+		"tooltip": false
     },
     "battery": {
         "states": {

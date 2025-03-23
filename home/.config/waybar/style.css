@@ -25,11 +25,13 @@ window#waybar.hidden {
 button {
     /* Use box-shadow instead of border so the text isn't offset */
 	color:#999999;
+	border:transparent;
+	background: transparent;
 }
 
 button:hover {
-	 box-shadow: inherit;
-	 text-shadow: inherit;
+	box-shadow: inherit;
+	text-shadow: inherit;
 }
 
 /* you can set a style on hover for any module like this */
@@ -88,9 +90,6 @@ label:focus {
     background-color: #000000;
 }
 
-#network {
-}
-
 #network.disconnected {
     background-color: #f53c3c;
 	color:#eeeeee;
@@ -125,9 +124,6 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {
-}
-
 #temperature.critical {
     background-color: #eb4d4b;
 }
@@ -153,18 +149,12 @@ label:focus {
     color: #2d3436;
 }
 
-#mpd {
-}
-
 #mpd.disconnected {
     background-color: #f53c3c;
 }
 
 #mpd.stopped {
 	opacity:0.5;
-}
-
-#mpd.paused {
 }
 
 #privacy {
