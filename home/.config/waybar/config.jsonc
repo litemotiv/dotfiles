@@ -2,6 +2,8 @@
 {
 	"height": 30,
     "spacing": 4, 
+	"margin": "4px 4px 0px 4px",
+	"reload_style_on_change": true,
     "modules-left": [
         "hyprland/workspaces",
 		"mpd"
@@ -10,7 +12,8 @@
         "clock"
     ],
     "modules-right": [
-        "pulseaudio",
+        "wireplumber",
+		"backlight",
         "network",
         "load",
         "temperature",
@@ -18,9 +21,6 @@
         "tray"
     ],
      "hyprland/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "warp-on-scroll": false,
          "format": "{name}: {icon}",
          "format-icons": {
              "1": "",
@@ -35,17 +35,25 @@
      },
     "mpd": {
 		"server": "10.0.0.6",
-        "format": "{stateIcon} {artist} - {title} ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "Stopped ",
+        "format": " {stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "format-disconnected": " {stateIcon} Disconnected",
+        "format-stopped": " {stateIcon} Not playing",
         "unknown-tag": "N/A",
 		"max-length": 50,
+		"artist-len": 20,
+		"title-len": 20,
         "state-icons": {
+            "disconnected": "",
             "paused": "",
-            "playing": ""
+            "playing": "",
+            "stopped": ""
         },
-        "tooltip-format": "{elapsedTime:%M:%S}/{totalTime:%M:%S} [{songPosition}|{queueLength}]",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format": "{album} [{songPosition}/{queueLength}]",
+        "tooltip-format-disconnected": "Disconnected",
+		"on-click": "mpc -q -h 10.0.0.6 toggle",
+		"on-click-right": "mpc -q -h 10.0.0.6 next",
+		"on-scroll-up": "mpc -q -h 10.0.0.6 seek -5%",
+		"on-scroll-down": "mpc -q -h 10.0.0.6 seek +5%"
     },
 	"backlight": {
 		"format": "{percent}% {icon}",
@@ -55,7 +63,8 @@
         "spacing": 10
     },
     "clock": {
-		"format": "{:%a %d %b %H:%M}"
+		"format": "{:%a %d %b %H:%M}",
+		"tooltip": false
     },
 	"load": {
 		"interval": 10,
@@ -94,6 +103,12 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+	"wireplumber": {
+		"format": "{volume}% {icon}",
+		"format-muted": "",
+		"on-click": "helvum",
+		"format-icons": ["", "", ""]
+	},
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",

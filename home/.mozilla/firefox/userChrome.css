@@ -48,6 +48,7 @@ toolbarbutton,
 
 .titlebar-close {
   opacity: .8;
+  margin-right:5px !important;
 }
 
 /*

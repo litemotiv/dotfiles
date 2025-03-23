@@ -4,53 +4,32 @@
 }
 
 window#waybar {
-    background-color:#0f0f0f;
+    /*background-color:#0f0f0f;*/
+	background-color:transparent;
     color: #aaaaaa;
 	/*border-bottom:1px solid #555555;*/
     transition-property: background-color;
     transition-duration: .5s;
-	padding:10px;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 .module {
 	border-radius:5px;
-	/*background-color:rgba(0,0,0,.5);*/
+	background-color:rgba(0,0,0,.5);
     padding: 0 10px;
 }
+
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-	color:#aaaaaa;
+	color:#999999;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
+	 box-shadow: inherit;
+	 text-shadow: inherit;
 }
 
 /* you can set a style on hover for any module like this */
@@ -61,7 +40,8 @@ button:hover {
     padding: 0 5px;
 }
 
-#workspaces button:hover {
+#workspaces button.active {
+	color:#dddddd;
 }
 
 #workspaces button.focused {
@@ -72,6 +52,7 @@ button:hover {
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
+
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
@@ -124,8 +105,6 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
 }
 
 #wireplumber.muted {
@@ -182,6 +161,7 @@ label:focus {
 }
 
 #mpd.stopped {
+	opacity:0.5;
 }
 
 #mpd.paused {
