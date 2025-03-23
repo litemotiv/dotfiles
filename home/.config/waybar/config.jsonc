@@ -35,18 +35,16 @@
      },
     "mpd": {
 		"server": "10.0.0.6",
-        "format": " {stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-        "format-disconnected": " {stateIcon} Disconnected",
-        "format-stopped": " {stateIcon} Not playing",
+        "format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "format-disconnected": " Disconnected",
+        "format-stopped": " Not playing",
         "unknown-tag": "N/A",
 		"max-length": 50,
 		"artist-len": 20,
 		"title-len": 20,
         "state-icons": {
-            "disconnected": "",
             "paused": "",
-            "playing": "",
-            "stopped": ""
+            "playing": ""
         },
         "tooltip-format": "{album} [{songPosition}/{queueLength}]",
         "tooltip-format-disconnected": "Disconnected",
