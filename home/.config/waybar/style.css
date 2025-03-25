@@ -20,6 +20,7 @@ window#waybar.hidden {
 	border-radius:5px;
 	background-color:rgba(0,0,0,.5);
     padding: 0 10px;
+	margin:0 2px;
 }
 
 button {
@@ -61,6 +62,17 @@ button:hover {
 
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
+}
+
+.module#custom-wlsunset {
+	margin-right:0;
+	border-radius:5px 0 0 5px;
+}
+
+.module#backlight {
+	padding-left:0;
+	margin-left:0;
+	border-radius:0 5px 5px 0;
 }
 
 #battery.charging, #battery.plugged {
@@ -114,10 +126,6 @@ label:focus {
     background-color: #66cc99;
     color: #2a5c45;
     min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {

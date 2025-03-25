@@ -110,7 +110,7 @@ New tab [+] icon divider
 Rounded content border
 */
 .browserStack > browser {
-  border-radius: 15px;
+  border-radius: 10px;
   outline: 6px solid #0f0f0f !important;
 }
 

@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
 	"height": 30,
-    "spacing": 4, 
+    "spacing": 0, 
 	"margin": "4px 4px 0px 4px",
 	"reload_style_on_change": true,
     "modules-left": [
@@ -13,6 +13,7 @@
     ],
     "modules-right": [
         "wireplumber",
+		"custom/wlsunset",
 		"backlight",
         "network",
         "load",
@@ -57,6 +58,18 @@
 		"format": "{percent}% {icon}",
 		"format-icons": [""],
 		"tooltip": false
+	},
+	"custom/wlsunset": {
+		"exec": "~/.config/waybar/scripts/wlsunset.sh",
+		"restart-interval": 60,
+		"format": "{}",
+		"return-type": "json",
+		"tooltip": true
+	},
+	"custom/notifications": {
+		"exec": "~/.config/waybar/scripts/notifications.sh",
+		"on-click": "dunstctl set-paused toggle",
+		"restart-interval": 1
 	},
     "tray": {
         "spacing": 10
@@ -127,17 +140,5 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
     }
 }
