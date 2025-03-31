@@ -6,7 +6,7 @@
 window#waybar {
     /*background-color:#0f0f0f;*/
 	background-color:transparent;
-    color: #aaaaaa;
+    /*color: #aaaaaa;*/
 	/*border-bottom:1px solid #555555;*/
     transition-property: background-color;
     transition-duration: .5s;
@@ -18,10 +18,21 @@ window#waybar.hidden {
 
 .module {
 	border-radius:5px;
-	background-color:rgba(0,0,0,.5);
+	background:rgba(255,255,255,.1);
+  	color:rgba(255,255,255,.75);
     padding: 0 10px;
 	margin:0 2px;
 }
+
+tooltip {
+	background-color:rgba(255,255,255,.75);
+}
+
+	tooltip label {
+		color:black;
+		text-shadow:none;
+		padding:0;
+	}
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -164,6 +175,10 @@ label:focus {
 #mpd.stopped {
 	opacity:0.5;
 }
+
+	#mpd.stopped tooltip {
+		opacity:0;
+	}
 
 #privacy {
     padding: 0;
