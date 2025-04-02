@@ -41,7 +41,7 @@ horizontal_padding = 10
 
 text_icon_padding = 0
 
-frame_width = 2
+frame_width = 0
 
 frame_color = "#444444ee"
 
@@ -180,7 +180,7 @@ history_length = 20
 ### Misc/Advanced ###
 
 # dmenu path.
-dmenu = /usr/bin/dmenu -p dunst:
+dmenu = /usr/bin/wofi -d -p dunst:
 
 # Browser for opening urls in context menu.
 browser = /usr/bin/xdg-open
@@ -241,10 +241,11 @@ timeout = 10
 default_icon = dialog-information
 
 [urgency_normal]
-background = "#101010ee"
-foreground = "#999999"
-highlight = "#aaaaaaee"
-timeout = 10
+background = "#ffffffbb"
+foreground = "#333333"
+highlight = "#666666ee"
+frame_color = "#ffffff00"
+#timeout = 10
 override_pause_level = 30
 # Icon for notifications with normal urgency
 default_icon = dialog-information

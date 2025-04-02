@@ -29,7 +29,7 @@ eval set -- ${args}
 		wpctl set-volume @DEFAULT_AUDIO_SINK@ $volume -l 1.0
 		current=`wpctl get-volume @DEFAULT_AUDIO_SINK@`
 		new=`bc <<< "scale=0; (${current:8:5} * 100)/1"`
-		dunstify -t 3000 -h string:x-dunst-stack-tag:progress "Volume: $new%" -h int:value:"$new"
+		#dunstify -t 3000 -h string:x-dunst-stack-tag:progress "Volume: $new%" -h int:value:"$new"
 		shift 2 
 		;;
     -b | --brightness)  
@@ -37,7 +37,7 @@ eval set -- ${args}
 		brightnessctl s $brightness
 		current=`brightnessctl g`
 		perc=$(( 100*$current/255 ))
-		dunstify -t 3000 -h string:x-dunst-stack-tag:display "Brightness: $perc%" -h int:value:"$perc"
+		#dunstify -t 3000 -h string:x-dunst-stack-tag:display "Brightness: $perc%" -h int:value:"$perc"
 		shift 2 
 		;;
     -h | --help)    	

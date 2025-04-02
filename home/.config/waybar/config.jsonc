@@ -9,15 +9,16 @@
 		"mpd"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+		"custom/notification"
     ],
     "modules-right": [
-        "wireplumber",
+        "pulseaudio",
 		"custom/wlsunset",
 		"backlight",
-        "network",
         "load",
         "temperature",
+		"network",
         "battery",
         "tray"
     ],
@@ -66,10 +67,25 @@
 		"return-type": "json",
 		"tooltip": true
 	},
-	"custom/notifications": {
-		"exec": "~/.config/waybar/scripts/notifications.sh",
-		"on-click": "dunstctl set-paused toggle",
-		"restart-interval": 1
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{} {icon}",
+		"format-icons": {
+		  "notification": "",
+		  "none": "",
+		  "dnd-notification": "",
+		  "dnd-none": "",
+		  "inhibited-notification": "",
+		  "inhibited-none": "",
+		  "dnd-inhibited-notification": "",
+		  "dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
 	},
     "tray": {
         "spacing": 10
@@ -113,8 +129,7 @@
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{essid}",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "Disconnected ⚠"
     },
 	"wireplumber": {
 		"format": "{volume}% {icon}",
@@ -138,7 +153,6 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        }
     }
 }
