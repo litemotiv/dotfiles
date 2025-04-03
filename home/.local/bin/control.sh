@@ -22,6 +22,20 @@ if [[ $# -eq 0 ]]; then
   usage
 fi
 
+# helper function to create a progress bar string
+function create_progress() {
+	for i in $(seq 1 20);
+	do
+		if [ $i -lt $level ]
+		then
+		   bar+="￭"	
+		else
+		   bar+="･"	
+		fi
+	done
+}
+
+# commands
 eval set -- ${args}
   case $1 in
     -v | --volume) 		
@@ -29,7 +43,13 @@ eval set -- ${args}
 		wpctl set-volume @DEFAULT_AUDIO_SINK@ $volume -l 1.0
 		current=`wpctl get-volume @DEFAULT_AUDIO_SINK@`
 		new=`bc <<< "scale=0; (${current:8:5} * 100)/1"`
-		#dunstify -t 3000 -h string:x-dunst-stack-tag:progress "Volume: $new%" -h int:value:"$new"
+
+		# create progress bar and notify
+		bar=""
+		level=$((new/5))
+		create_progress
+		
+		notify-send -i audio-volume-medium-symbolic -t 3000 -a vol -r 1 -e "Volume" "［ $bar ］$new%"
 		shift 2 
 		;;
     -b | --brightness)  
@@ -37,7 +57,13 @@ eval set -- ${args}
 		brightnessctl s $brightness
 		current=`brightnessctl g`
 		perc=$(( 100*$current/255 ))
-		#dunstify -t 3000 -h string:x-dunst-stack-tag:display "Brightness: $perc%" -h int:value:"$perc"
+
+		# create progress bar and notify
+		bar=""
+		level=$((perc/5))
+		create_progress
+		
+		notify-send -i video-display-symbolic -t 3000 -a bl -r 1 -e "Backlight" "［ $bar ］$perc%"
 		shift 2 
 		;;
     -h | --help)    	
