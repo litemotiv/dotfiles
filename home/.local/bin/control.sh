@@ -64,8 +64,7 @@ eval set -- ${args}
 		brightnessctl s $brightness
 		
 		# get current level for OSD
-		current=`brightnessctl g`
-		percent=$(( 100*$current/255 ))
+		percent=`brightnessctl -P g`
 		notification "$percent" "Backlight"
 		
 		shift 2 
