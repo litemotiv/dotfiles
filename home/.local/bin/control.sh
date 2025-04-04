@@ -23,16 +23,26 @@ if [[ $# -eq 0 ]]; then
 fi
 
 # helper function to create a progress bar string
-function create_progress() {
-	for i in $(seq 1 20);
+# 
+# $1 percentage
+# $2 label
+function notification() {
+	bar=""
+
+	# 25 steps - divide percentage by 4
+	level=$(($1/4))
+
+	for i in $(seq 1 25);
 	do
 		if [ $i -lt $level ]
 		then
-		   bar+="￭"	
+		   bar+="■"	
 		else
-		   bar+="･"	
+		   bar+=""	
 		fi
 	done
+		
+	notify-send -u low -i audio-volume-medium-symbolic -t 3000 -r 1 -e "$2" "$bar  <b>$1%</b>"
 }
 
 # commands
@@ -41,29 +51,23 @@ eval set -- ${args}
     -v | --volume) 		
 		volume=$2; 
 		wpctl set-volume @DEFAULT_AUDIO_SINK@ $volume -l 1.0
-		current=`wpctl get-volume @DEFAULT_AUDIO_SINK@`
-		new=`bc <<< "scale=0; (${current:8:5} * 100)/1"`
 
-		# create progress bar and notify
-		bar=""
-		level=$((new/5))
-		create_progress
+		# get current level for OSD
+		current=`wpctl get-volume @DEFAULT_AUDIO_SINK@`
+		percent=`bc <<< "scale=0; (${current:8:5} * 100)/1"`
+		notification "$percent" "Volume"
 		
-		notify-send -i audio-volume-medium-symbolic -t 3000 -a vol -r 1 -e "Volume" "［ $bar ］$new%"
 		shift 2 
 		;;
     -b | --brightness)  
 		brightness=$2; 
 		brightnessctl s $brightness
-		current=`brightnessctl g`
-		perc=$(( 100*$current/255 ))
-
-		# create progress bar and notify
-		bar=""
-		level=$((perc/5))
-		create_progress
 		
-		notify-send -i video-display-symbolic -t 3000 -a bl -r 1 -e "Backlight" "［ $bar ］$perc%"
+		# get current level for OSD
+		current=`brightnessctl g`
+		percent=$(( 100*$current/255 ))
+		notification "$percent" "Backlight"
+		
 		shift 2 
 		;;
     -h | --help)    	
