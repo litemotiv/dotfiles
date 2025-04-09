@@ -91,6 +91,10 @@ Remove CUE file from flac
 
 `# metaflac --remove-all-tags album.flac`
 
-### 6 Sudo asterisks
+### 7 Sudo asterisks
 visudo
 `Defaults env_reset,pwfeedback`
+
+### 8 Remove Gnome suspend notifications
+
+`gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'`
