@@ -20,6 +20,7 @@
         "temperature",
 		"network",
         "battery",
+		"idle_inhibitor",
         "tray"
     ],
      "hyprland/workspaces": {
@@ -87,6 +88,13 @@
 		"on-click-right": "swaync-client -d -sw",
 		"escape": true
 	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
     "tray": {
         "spacing": 10
     },
@@ -153,6 +161,7 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        }
+        },
+		"tooltip": false
     }
 }
