@@ -3,7 +3,7 @@
 	"height": 30,
     "spacing": 0, 
 	"margin": "4px 4px 0px 4px",
-	"reload_style_on_change": true,
+	"reload_style_on_change": false,
     "modules-left": [
         "hyprland/workspaces",
 		"mpd"
