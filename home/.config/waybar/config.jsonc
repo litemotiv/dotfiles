@@ -3,9 +3,10 @@
 	"height": 30,
     "spacing": 0, 
 	"margin": "4px 4px 0px 4px",
-	"reload_style_on_change": false,
+	"reload_style_on_change": true,
     "modules-left": [
-        "hyprland/workspaces",
+		"load",
+		"temperature",
 		"mpd"
     ],
     "modules-center": [
@@ -13,16 +14,31 @@
 		"custom/notification"
     ],
     "modules-right": [
-        "pulseaudio",
+		"pulseaudio",
 		"custom/wlsunset",
 		"backlight",
-        "load",
-        "temperature",
-		"network",
-        "battery",
 		"idle_inhibitor",
+        "battery",
         "tray"
     ],
+	"group/hardware": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 500,
+			"transition-left-to-right": false
+		},
+		"modules": [
+			"custom/hardware-arrow",
+			"pulseaudio",
+			"custom/wlsunset",
+			"network",
+			"idle_inhibitor"
+		]
+	},
+	"custom/hardware-arrow": {
+		"format": "←",
+		"tooltip": false
+	},
      "hyprland/workspaces": {
          "format": "{name}: {icon}",
          "format-icons": {
@@ -116,17 +132,16 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-good": "", // An empty format will hide the module
+        "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {

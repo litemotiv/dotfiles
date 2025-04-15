@@ -75,15 +75,21 @@ button:hover {
     margin-right: 0;
 }
 
+.module#load,
 .module#custom-wlsunset {
 	margin-right:0;
 	border-radius:5px 0 0 5px;
 }
 
+.module#temperature,
 .module#backlight {
 	padding-left:0;
 	margin-left:0;
 	border-radius:0 5px 5px 0;
+}
+
+.module#custom-hardware-arrow:hover {
+	background:rgba(255,255,255,.2);
 }
 
 #battery.charging, #battery.plugged {
@@ -118,15 +124,9 @@ label:focus {
 	color:#eeeeee;
 }
 
-#pulseaudio {
-}
-
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
-}
-
-#wireplumber {
 }
 
 #wireplumber.muted {

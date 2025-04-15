@@ -1,0 +1,9 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wlsunset -l 51.1 -L 5.1 -g 1.0 -t 5500 
+Restart=on-failure
+StandardOutput=file:/tmp/wlsunset.log
