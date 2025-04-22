@@ -3,7 +3,7 @@ mkdir outdir
 
 shopt -s nullglob
 
-for file in *.{flac,wav}; do
+for file in *.{flac,wav,aiff}; do
 	# assumes only one dot in filename
 	base_name="${file%.*}"
 

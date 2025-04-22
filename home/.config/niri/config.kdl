@@ -22,7 +22,7 @@ input {
     touchpad {
         // off
         tap
-        // dwt
+        dwt
         // dwtp
         // drag-lock
         // natural-scroll
@@ -211,7 +211,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        on
+        // on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -246,11 +246,15 @@ layout {
     }
 }
 
+workspace "one"
+workspace "two"
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
+spawn-at-startup "firefox"
 spawn-at-startup "ghostty"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -291,6 +295,26 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"firefox$"# 
+	open-on-workspace "one"
+    open-maximized true
+    open-focused true
+}
+
+window-rule {
+    match app-id=r#"ghostty$"# 
+	// match at-startup=true
+	open-on-workspace "two"
+	open-focused false
+}
+
+window-rule {
+    match app-id=r#"vesktop$"# 
+	open-on-workspace "one"
+    open-maximized true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -368,18 +392,18 @@ binds {
 
     Mod+K { close-window; }
 
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
+    Mod+Left  { focus-column-left-or-last; }
+    Mod+Down  { focus-workspace-down; }
+    Mod+Up    { focus-workspace-up; }
+    Mod+Right { focus-column-right-or-first; }
     Mod+H     { focus-column-left; }
     // Mod+J     { focus-window-down; }
     // Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
-    Mod+Ctrl+Down  { move-window-down; }
-    Mod+Ctrl+Up    { move-window-up; }
+    //Mod+Ctrl+Down  { move-window-down; }
+    //Mod+Ctrl+Up    { move-window-up; }
     Mod+Ctrl+Right { move-column-right; }
     Mod+Ctrl+H     { move-column-left; }
     Mod+Ctrl+J     { move-window-down; }
@@ -428,8 +452,8 @@ binds {
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
-    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+Ctrl+Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
 
