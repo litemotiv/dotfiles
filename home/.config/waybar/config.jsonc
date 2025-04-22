@@ -7,7 +7,7 @@
     "modules-left": [
 		"load",
 		"temperature",
-		"mpd"
+		"mpris"
     ],
     "modules-center": [
         "clock",
@@ -52,6 +52,18 @@
              "default": ""
          }
      },
+	 "mpris": {
+	 	"player": "mpd",
+		"format": "{status_icon} {artist} - {title} [{position}/{length}]",
+		"tooltip-format": "{status}",
+		"tooltip-format-playing": "Album: {album}",
+		"ignored-players": ["firefox"],
+		"interval": 10,
+		"status-icons": {
+			"default": "",
+			"paused": ""
+		}
+	 },
     "mpd": {
 		"server": "10.0.0.6",
         "format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
