@@ -5,6 +5,7 @@
 	"margin": "4px 4px 0px 4px",
 	"reload_style_on_change": true,
     "modules-left": [
+		"niri/workspaces",
 		"load",
 		"temperature",
 		"mpris"
@@ -39,6 +40,9 @@
 		"format": "←",
 		"tooltip": false
 	},
+	"niri/workspaces": {
+		"format": "{index}"
+	},
      "hyprland/workspaces": {
          "format": "{name}: {icon}",
          "format-icons": {
@@ -55,35 +59,18 @@
 	 "mpris": {
 	 	"player": "mpd",
 		"format": "{status_icon} {artist} - {title} [{position}/{length}]",
+		"format-stopped": "{status_icon} Not playing",
+		"artist-len": 20,
+		"title-len": 20,
 		"tooltip-format": "{status}",
 		"tooltip-format-playing": "Album: {album}",
 		"ignored-players": ["firefox"],
 		"interval": 10,
 		"status-icons": {
 			"default": "",
-			"paused": ""
+			"paused": "󰏤"
 		}
 	 },
-    "mpd": {
-		"server": "10.0.0.6",
-        "format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-        "format-disconnected": " Disconnected",
-        "format-stopped": " Not playing",
-        "unknown-tag": "N/A",
-		"max-length": 50,
-		"artist-len": 20,
-		"title-len": 20,
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "{album} [{songPosition}/{queueLength}]",
-        "tooltip-format-disconnected": "Disconnected",
-		"on-click": "mpc -q -h 10.0.0.6 toggle",
-		"on-click-right": "mpc -q -h 10.0.0.6 next",
-		"on-scroll-up": "mpc -q -h 10.0.0.6 seek -5%",
-		"on-scroll-down": "mpc -q -h 10.0.0.6 seek +5%"
-    },
 	"backlight": {
 		"format": "{percent}% {icon}",
 		"format-icons": [""],
@@ -100,14 +87,14 @@
 		"tooltip": false,
 		"format": "{} {icon}",
 		"format-icons": {
-		  "notification": "",
-		  "none": "",
-		  "dnd-notification": "",
-		  "dnd-none": "",
-		  "inhibited-notification": "",
-		  "inhibited-none": "",
-		  "dnd-inhibited-notification": "",
-		  "dnd-inhibited-none": ""
+		  "notification": "",
+		  "none": "",
+		  "dnd-notification": "",
+		  "dnd-none": "",
+		  "inhibited-notification": "",
+		  "inhibited-none": "",
+		  "dnd-inhibited-notification": "",
+		  "dnd-inhibited-none": ""
 		},
 		"return-type": "json",
 		"exec-if": "which swaync-client",
@@ -132,14 +119,14 @@
     },
 	"load": {
 		"interval": 10,
-		"format": "{load1} ",
+		"format": "{load1} 󰄨",
 		"max-length": 10
 	},
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""],
+        "format-icons": ["", "", "", ""],
 		"tooltip": false
     },
     "battery": {
@@ -149,7 +136,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-good": "", // An empty format will hide the module
