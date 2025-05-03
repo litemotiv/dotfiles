@@ -3,7 +3,7 @@ fullscreen = false
 early-exit = true
 
 corner-roundness = 0
-initial-tool = "arrow"
+initial-tool = "crop"
 
 #annotation-size-factor = 2
 
