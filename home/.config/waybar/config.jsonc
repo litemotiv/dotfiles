@@ -1,5 +1,6 @@
 // -*- mode: jsonc -*-
 {
+	"layer": "top",
 	"height": 30,
     "spacing": 0, 
 	"margin": "4px 4px 0px 4px",
@@ -131,20 +132,19 @@
     },
     "battery": {
         "states": {
-            "good": 95,
+			"full": 100,
+            "good": 75,
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "",
         "format-alt": "{time} {icon}",
-        "format-good": "", // An empty format will hide the module
-        "format-full": "",
+		"tooltip-format": "{capacity}%",
+        "format-good": "{icon}", // An empty format will hide the module
+        "format-full": "{icon}",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         "format-wifi": "{signalStrength}% ",
