@@ -1,9 +1,9 @@
-@define-color cc-bg rgba(46, 46, 46, 0.9);
+@define-color cc-bg rgba(22, 30, 39, 0.9);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(48, 48, 48, 0.8);
-@define-color noti-bg-opaque rgb(48, 48, 48);
+@define-color noti-bg rgba(7,49,59, 0.9);
+@define-color noti-bg-opaque #002b36;
 @define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
+@define-color noti-bg-hover rgb(22, 30, 39, 0.9);
 @define-color noti-bg-hover-opaque rgb(56, 56, 56);
 @define-color noti-bg-focus rgba(68, 68, 68, 0.6);
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
@@ -11,6 +11,7 @@
 @define-color text-color rgba(255, 255, 255, .8);
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(0, 128, 255);
+
 .notification-row {
   outline: none;
 }
@@ -212,6 +213,7 @@
 
 .notification-group {
   /* Styling only for Grouped Notifications */
+	background:transparent;
 }
 
 .notification-group.low {
@@ -266,7 +268,6 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-  background-color: @noti-bg-hover-opaque;
 }
 
 .control-center {
@@ -290,7 +291,6 @@
 }
 
 .control-center .control-center-list .notification {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
 }
 
 .control-center .control-center-list .notification .notification-default-action,
