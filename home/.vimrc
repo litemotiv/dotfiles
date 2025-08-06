@@ -26,6 +26,8 @@ hi SpecialKey ctermfg=235						" tabs and special chars colors
 hi TablineFill ctermbg=22 ctermfg=234			" plugin: buftabline
 hi Tabline cterm=NONE ctermbg=234 ctermfg=240
 hi TabLineSel ctermfg=236 ctermbg=39
+
+:hi MatchParen ctermbg=black cterm=underline 
  
 let g:buftabline_numbers=1
 let g:buftabline_indicators=1
