@@ -1,5 +1,3 @@
-# .bashrc
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -25,14 +23,14 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-#alias ls="ls --color=auto --hyperlink=auto"
-alias la="ls -a"
-alias ll="ls -la"
-alias icat="kitten icat"
-
 if [ -x "$(command -v eza)" ]; then
 	alias ls="eza --hyperlink --group-directories-first --icons"
+else
+	alias ls="ls --color=auto --hyperlink=auto"
 fi
+
+alias la="ls -a"
+alias ll="ls -la"
 
 TZ="Europe/Amsterdam"
 COLOR1='\[\033[35m\]'
