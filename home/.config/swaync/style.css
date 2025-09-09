@@ -3,7 +3,7 @@
 @define-color noti-bg rgba(7,49,59, 0.9);
 @define-color noti-bg-opaque #002b36;
 @define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(22, 30, 39, 0.9);
+@define-color noti-bg-hover rgba(17, 59, 69, 0.9);
 @define-color noti-bg-hover-opaque rgb(56, 56, 56);
 @define-color noti-bg-focus rgba(68, 68, 68, 0.6);
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
