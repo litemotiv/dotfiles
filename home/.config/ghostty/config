@@ -16,3 +16,4 @@ keybind = alt+one=unbind
 keybind = alt+two=unbind
 keybind = alt+three=unbind
 keybind = alt+four=unbind
+keybind = f11=toggle_fullscreen

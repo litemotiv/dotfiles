@@ -1,39 +1,29 @@
-set hidden										" allow multiple buffers to be opened
-set number										" show line numbers
-set cindent tabstop=4 shiftwidth=4				" keep indentation on new line
-filetype plugin indent on
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
-autocmd FileType json setlocal tabstop=2 shiftwidth=2
+set hidden													" allow multiple buffers to be opened
+set number													" show line numbers
+set cindent tabstop=4 shiftwidth=4							" keep indentation on new line
+filetype plugin indent on									" autodetect filetype and set default indenting
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2	" override js indenting
+autocmd FileType json setlocal tabstop=2 shiftwidth=2		" override json indenting
 
 "set list
-set listchars=tab:▸·,trail:·					" Make tab characters and trailing spaces visible
+set listchars=tab:▸·,trail:·								" Make tab characters and trailing spaces visible
 
-set laststatus=2								" double status line
-"set statusline=
-"set statusline+=%F								" File path 
-"set statusline+=\ %y							" File type 
-"set statusline+=\ %{&ff}						" File encoding
-"set statusline+=\ %{strlen(&fenc)?&fenc:&enc}	" File encoding
-"set statusline+=\ %m\ %r						" Modified and readonly flags
-"set statusline+=%=line\ %l/%L\ (%p%%)\ col\ %c\ 
+set laststatus=2											" double status line
 
-"hi statusline ctermbg=0 ctermfg=76				" statusline colors
-
-hi Folded ctermfg=Black							" fold colors
+hi Folded ctermfg=Black										" fold colors
 hi Folded ctermbg=LightBlue
-hi SpecialKey ctermfg=235						" tabs and special chars colors
+hi SpecialKey ctermfg=235									" tabs and special chars colors
 
-hi TablineFill ctermbg=22 ctermfg=234			" plugin: buftabline
+hi TablineFill ctermbg=22 ctermfg=234						" plugin: buftabline
 hi Tabline cterm=NONE ctermbg=234 ctermfg=240
 hi TabLineSel ctermfg=236 ctermbg=39
 
-:hi MatchParen ctermbg=black cterm=underline 
- 
-let g:buftabline_numbers=1
-let g:buftabline_indicators=1
-let g:buftabline_separators=0
+let g:buftabline_numbers=1									" show buffer number in tab
+let g:buftabline_indicators=1								" show buffer state in tab
+"let g:buftabline_separators=1								" draw left line on tabs
 
-let g:netrw_home = '/home/olivier/.cache/vim'	" location of netrw history file
+:hi MatchParen ctermbg=black cterm=underline				" plugin: matchup
 
-" disallow editing files that are RO
-autocmd BufRead * let &modifiable = !&readonly
+let g:netrw_home = '/home/olivier/.cache/vim'				" location of netrw history file
+
+autocmd BufRead * let &modifiable = !&readonly 				" disallow editing files that are RO
