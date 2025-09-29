@@ -1,2 +1,2 @@
-timeout 120  'brightnessctl -qs set 15%' resume 'brightnessctl -qr'
-timeout 300  'brightnessctl -q set 0%' 
+timeout 120  'brightnessctl -s set 15%' resume 'brightnessctl -r'
+timeout 300  'niri msg output eDP-1 off' resume 'niri msg output eDP-1 on'
