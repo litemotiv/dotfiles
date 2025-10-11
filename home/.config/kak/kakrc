@@ -1,0 +1,12 @@
+colorscheme ayu-dark
+
+set-option global tabstop 4
+set-option global scrolloff 5,5
+set-option global ui_options terminal_assistant=cat
+
+map global normal <esc> ";,"
+
+add-highlighter global/ wrap
+add-highlighter global/ number-lines -separator "  "
+add-highlighter global/ show-matching
+
