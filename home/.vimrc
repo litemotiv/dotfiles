@@ -27,3 +27,4 @@ let g:buftabline_indicators=1								" show buffer state in tab
 let g:netrw_home = '/home/olivier/.cache/vim'				" location of netrw history file
 
 autocmd BufRead * let &modifiable = !&readonly 				" disallow editing files that are RO
+
