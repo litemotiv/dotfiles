@@ -1,5 +1,5 @@
 [general]
-fullscreen = false
+fullscreen = true
 early-exit = true
 
 corner-roundness = 0
