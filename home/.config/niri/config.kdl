@@ -281,7 +281,7 @@ workspace "two"
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "firefox"
+//spawn-at-startup "irefox"
 spawn-at-startup "ghostty"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -326,6 +326,13 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"# 
+	open-on-workspace "one"
+    open-maximized true
+    open-focused true
+}
+
+window-rule {
+    match app-id=r#"brave-browser$"# 
 	open-on-workspace "one"
     open-maximized true
     open-focused true
